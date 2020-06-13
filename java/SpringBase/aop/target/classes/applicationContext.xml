@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+<!--    上面加入aop架构-->
+    <aop:config>
+    <aop:aspect id="log" ref="logging">
+<!--        student中每执行一个方法(execution选择要执行的方法)，下面的advice就会执行一遍-->
+<!--        切入点声明名称和我们要监视的方法-->
+        <aop:pointcut id="selectAll"
+                      expression="execution(* org.example.*.*(..))"/>
+        <aop:before pointcut-ref="selectAll" method="beforeAdvice"/>
+        <aop:after pointcut-ref="selectAll" method="afterAdvice"/>
+        <aop:after-returning pointcut-ref="selectAll"
+                             returning="retVal"
+                             method="afterReturningAdvice"/>
+        <aop:after-throwing pointcut-ref="selectAll"
+                            throwing="ex"
+                            method="AfterThrowingAdvice"/>
+    </aop:aspect>
+    </aop:config>
+    <!-- Definition for student bean -->
+    <bean id="student" class="org.example.Student">
+        <property name="name" value="Zara" />
+        <property name="age" value="11"/>
+    </bean>
+
+<!--    注意aspect也要注册bean-->
+    <!-- Definition for logging aspect -->
+    <bean id="logging" class="org.example.Logging"/>
+    <aop:aspectj-autoproxy/>
+    <bean id="annotation" class="org.example.AnnotationLogging"/>
+</beans>

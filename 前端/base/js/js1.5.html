@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取node</title>
+    <script type="text/javascript">
+        onload=function () {
+            //总结，children，父和兄都是 Element
+            var t=document.getElementsByClassName('father')[0]
+            console.log(t.getElementsByClassName('son3')[0].getAttribute('class'))  /*获取字节的的一种方法，getElementsBy...这个类方法本就是获取
+            子节点，当需要获取已经确定的子节点时就用此方法*/
+            console.log(t.children[1].previousElementSibling.getAttribute('class'))  /*获取前一个兄弟节点,获取属性*/
+            console.log(t.children[1].nextElementSibling.getAttribute('class'))   /*获取下一个兄弟节点*/
+            console.log(t.children[0].children[0].parentElement.getAttribute('class'))   /*获取直接父节点*/
+
+        }
+        function f() {  /*father添加节点*/
+            var t=document.getElementsByClassName('father')[0]
+            var son4=document.createElement('div')  /*先创建element*/
+            son4.appendChild(document.createTextNode('son4'))  /*在新创建节点里面添加text*/
+            var att=document.createAttribute('class')  /*创建属性*/
+            att.value='son4'
+            son4.setAttributeNode(att)
+            t.appendChild(son4)   /*增加节点还有一个方法  t.insertBefore()  插入到某个节点前面*/
+        }
+        function f1() {
+            var t=document.getElementsByClassName('father')[0]
+            t.removeChild(document.getElementsByClassName('son4')[0])
+            // t.remove()   /*删除自己*/
+        }
+// 最有用  增加节点的任意场合使用
+        function f2() {
+            var t=document.getElementsByClassName('father')[0]
+            temp=t.innerHTML   /*先把原来的html保留下来，再用原来的与新增的相加就行  与上面f效果一样但相比上面最简单*/
+            t.innerHTML=temp+'<div class="son4">son4</div>'  /*双向方法（可以获取也可以改变），不过操作的是所有子元素*/
+        }
+    </script>
+</head>
+<body>
+    <div class="father">
+        <div class="son1">son1
+            <div class="grandson">grandson</div>
+        </div>
+        <div class="son2">son2</div>
+        <div class="son3">son3</div>
+    </div>
+    <input type="button" onclick="f()" value="增加">
+    <input type="button" value="删除" onclick="f1()">
+    <input type="button" value="快速增加" onclick="f2()">
+</body>
+</html>

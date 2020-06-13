@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<body>
+
+<a style="display:block;width:200px;height:42px;line-height:42px;font-size:18px;text-align:center;margin:40px auto;font-weight:800;" href="#" class="tbox">点击登录</a>
+
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			</div>
+			<div class="modal-body">
+					<h4 class="modal-title" align="center">登录框</h4>
+					<br/>
+					<form class="form-horizontal" role="form" action="http://localhost:8080/login" method="post">
+						<div class="form-group">
+							<label for="name"  class="col-sm-offset-2 col-sm-2 control-label">账号</label>
+							<div class="col-sm-5">
+								<input type="text" name="userId" class="form-control" id="name" placeholder="请输您的入账号">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="col-sm-offset-2 col-sm-2 control-label">密码</label>
+							<div class="col-sm-5">
+								<input type="password" name="userPassword" class="form-control" id="password" placeholder="请输入您的密码">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-4 col-sm-5">
+								<button id="submitBtn" type="submit" class="btn btn-default btn-block btn-primary">登录</button>
+							</div>
+						</div>
+						</form>
+			</div>
+			<div class="modal-footer">
+			</div>
+		</div>
+		<!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+你的id为：1000000
+密码为：123456
+
+<script type="text/javascript">
+$(function(){
+
+	$(".tbox").click(function(){
+		$('#myModal').modal('show') //显示模态框
+	})
+
+	if ($("#userId")==""){
+		alert("请输入id")
+	}
+	
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+<p>第一个p</p>
+<p class="test">第二个p</p>
+<p>第三个p</p>
+<p>第四个p</p>
+
+<script>
+    $(document).ready(function () {
+        $("p").first().css("background","red")
+        $("p").last().css("color","red")
+        //$("p")[2].css("color","yellow")  这是错误的
+        $("p").eq(2).css("color","yellow")  //从0开始
+
+        $("p").filter(".test").css("background","blue")  //not
+    })
+</script>
+</body>
+</html>

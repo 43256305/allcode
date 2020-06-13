@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            if(location.hash) {
+                $('a[href=' + location.hash + ']').tab('show');
+            }
+            $(document.body).on("click", "a[data-toggle]", function(event) {
+                location.hash = this.getAttribute("href");
+            });
+        });
+        $(window).on('popstate', function() {
+            var anchor = location.hash || $("a[data-toggle=tab]").first().attr("href");
+            $('a[href=' + anchor + ']').tab('show');
+        });
+    </script>
+</head>
+<body>
+
+<ul class="nav nav-tabs" >
+        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+        <li><a data-toggle="tab" href="#profile">Profile</a></li>
+        <li><a data-toggle="tab" href="#messages">Messages</a></li>
+        <li><a data-toggle="tab" href="#settings">Settings</a></li>
+</ul>
+
+<div class="tab-content">
+        <div class="tab-pane active" id="home">home</div>
+        <div class="tab-pane" id="profile">profile</div>
+        <div class="tab-pane" id="messages">messages</div>
+        <div class="tab-pane" id="settings">settings</div>
+</div>
+
+</body>
+</html>  

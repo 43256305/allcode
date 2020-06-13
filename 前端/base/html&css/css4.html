@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css4</title>
+    <style type="text/css">
+        .class1{
+            float: left;   /*浮动后不占据原来位置，后面的元素可以在他的下面  浮动的元素本身是位置不变的，只是浮起来了，他后面的元素位置
+            可能因为他的浮动而变化位置    浮动的元素在一行显示（转化为了内联元素）   left  right*/
+            /*浮动的作用：制作导航等*/
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .class2{
+            width: 150px;
+            height: 150px;
+            background: #000;
+            float: left;
+        }
+        .class3{
+            float: left;
+            width:50px;
+            height: 50px;
+            background: #776688;
+        }
+    </style>
+</head>
+<body>
+    <div class="class1"></div>
+    <div class="class2"></div>
+    <div class="class3"></div>
+</body>
+</html>

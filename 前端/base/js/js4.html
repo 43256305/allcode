@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        function f() {
+            var s=document.getElementById('select')
+            s.add(new Option('物理',5))   /*新加option,注意大写*/
+            var index=s.selectedIndex   /*获取选中的option的index*/
+            alert(s.options[index].value)
+            alert(s.options[index].text)
+        }
+        function f1() {
+            var table=document.getElementById('table')
+            var tr=table.insertRow()   /*添加一行*/
+            var td1=tr.insertCell()   /*在这行中添加三列*/
+            var td2=tr.insertCell()
+            var td3=tr.insertCell()
+            td1.innerText='kjkjk'   /*向单元格中添加内容*/
+            var td4=document.getElementById('b1')
+            alert(td4.innerText)   /*获得Text*/
+        }
+    </script>
+</head>
+<body>
+<select name="select1" id="select" onchange="f()">  <!--改变则调用此函数-->
+    <option value="1">语文</option>
+    <option value="2" selected="selected">数学</option>
+    <option value="3">英语</option>
+    <option value="4">化学</option>
+</select>
+<table id="table" border=1 width="30%">
+    <tr>
+        <td><input type=checkbox id="box1"></td>
+        <td id="b1">第一行</td>
+        <td id="b2">第一行</td>
+    </tr>
+    <tr>
+        <td><input type=checkbox id="box2"></td>
+        <td id="b3">第二行</td>
+        <td id="b4">第二行</td>
+    </tr>
+    <tr>
+        <td><input type=checkbox id="box3"></td>
+        <td>第三行</td>
+        <td>第三行</td>
+    </tr>
+</table>
+<input type="button" value="增加行" onclick='f1()'>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+//总结，match加g可以直接匹配所有，exec加while可以匹配s中的所有分组
+        //常用方法
+        var str="hello"
+        document.writeln(str.indexOf("e"))
+        document.writeln(str.charAt(1))
+        document.writeln(str.substring(1,2))  //e  从1-2，不包括2
+        document.writeln(str.substr(1,2)+"<br>")  //el  从1开始的2个字符
+        //正则（方法与java很大不同，主要用match）   注意，js中的正则是用//包括起来(\w只需要一个转义字符)，用字符串则需要两个转义符
+        //方法：String：match matchAll search replace split   Reg： test exec
+        str="The rain in SPAIN stays mainly in the plain";
+        document.writeln("match:"+str.match(/ain/))   //  match从开头开始匹配，匹配到了返回匹配到的字符并停止匹配
+        document.writeln("match:"+str.match(/ain/g))  //(重点）加上g后，全局匹配，返回所有匹配到的
+        document.writeln("match:"+str.match(/\d+/))  //没有匹配到返回null
+        document.writeln("matchAll:"+str.matchAll(/ain/))  //matchAll返回迭代器
+        document.writeln("search:"+str.search(/\w+/))  //只匹配一次，返回匹配到的index，没有匹配到返回-1
+
+        document.writeln("<br>")
+        document.writeln("test:"+/ain/.test(str))   //test返回true or false
+        //(重点）如果在一个字符串中完成了一次模式匹配之后要开始检索新的字符串，就必须手动地把 lastIndex 属性重置为 0。
+        document.writeln("exec:"+/ain/g.exec(str))   //exec不管有没有g，都是返回第一个匹配到的元素(exec会记忆lastindex)，没匹配到返回null（与match相似）
+
+
+
+        //分组
+        document.writeln("<br>分组<br>")
+
+        var s="scores:s01,78;s02,69;s03,86;s04,65"    //怎么取分组？
+        // var re=/(s\d+),(\d+)/g
+        var re=/(s*)(\d{2})/g
+        s.match(re)
+        document.writeln("match与分组"+s.match(re))  //还是返回所有匹配到的，有没有分组都一样
+        //RegExp中存储了几个值完全看re中有几个分组，而不是字符串
+        document.writeln("match与RegExp:"+RegExp.$1+","+RegExp.$2)   //只要re中有分组，且用方法前面匹配了一次，RegExp中就存储了分组的值（存储的是最后一次匹配的值
+        //如match加g存储的是最后一个，而match不加g，test，exec是存储匹配到的第一个 ）
+        re.exec(s)
+        document.writeln("test和exec"+RegExp.$1+","+RegExp.$2+" index:"+re.lastIndex)
+        document.writeln("exec与分组"+re.exec(s))  //(重点）返回0:所有匹配到的  1:第1个分组  2:第2个分组 。。。 （*代表0-多个）
+        document.writeln("index:"+re.lastIndex)
+        re.exec(s)
+        document.writeln(re.lastIndex)
+
+        //返回所有s中匹配到的
+        document.writeln(" &nbsp;&nbsp;&nbsp;&nbsp;所有：")
+        re.lastIndex=0
+        var res=re.exec(s)
+        while (res){
+            document.writeln(res[2])  //2为第二个分组
+            res=re.exec(s)
+        }
+
+
+
+
+
+        document.writeln("<br>特殊符号<br>")
+        //几个特殊符号
+        document.writeln("match:"+str.match(/ain/))   //  match从开头开始匹配，匹配到了返回匹配到的字符并停止匹配
+        document.writeln("match:"+str.match(/ain/g))  //加上g后，全局匹配，返回所有匹配到的
+        document.writeln("match:"+str.match(/ain/gi))  //加上i，不区分大小写
+    </script>
+</head>
+<body>
+
+</body>
+</html>

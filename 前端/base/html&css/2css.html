@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2css</title>
+    <style type="text/css">
+    /*a标签不能继承颜色，h不能继承大小*/
+        .class1{    /*块元素，可以设置宽高，独占一行*/
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            text-align: center;    /*文本居中*/
+            display: inline-block;   /*转行内块元素   重点  只作用于当前标签，子标签不起作用*/
+        }
+        span{    /*行内元素不能设置宽高 高为字体撑起的高度*/
+            width: 100px;
+            height:100px;
+            background-color: green;
+        }
+        .class3{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: red url(../6.10/tb.gif) no-repeat bottom;   /*连写没有顺序   背景平铺，当一张图片填不满背景时，平铺会自动加入多张图片*/
+            /*no-repead  平铺方向：repead-x/y  位置写像素时，第一个是左边距离，第二个是上面距离*/
+            text-decoration: line-through;   /*文字修饰  underline下划线*/
+        }
+        a:hover{    /*鼠标放在上面显示*/
+            color: blue;
+        }
+        a{   /*默认颜色*/
+            color: #888888;
+        }
+    </style>
+</head>
+<body>
+    <div class="class1">谢杰辉<div>谢杰辉 嵌套</div></div>
+    <div class="class1">谢杰辉2</div>
+    <span>谢杰辉  行内元素</span>
+    <div class="class3">谢杰辉 背景设置</div>
+    <a href="">这是一个链接</a>
+</body>
+</html>

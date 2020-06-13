@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="javaCollection" class="org.example.JavaCollection">
+        <property name="list">
+            <list>
+<!--                注入引用类型-->
+<!--                <ref bean="address1"/>-->
+                <value>INDIA</value>
+                <value>Pakistan</value>
+                <value>USA</value>
+                <value>USA</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+<!--                <ref bean="address1"/>-->
+                <value>INDIA</value>
+                <value>Pakistan</value>
+                <value>USA</value>
+                <value>USA</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+<!--                <entry key ="two" value-ref="address1"/>-->
+                <entry key="1" value="INDIA"/>
+                <entry key="2" value="Pakistan"/>
+                <entry key="3" value="USA"/>
+                <entry key="4" value="USA"/>
+            </map>
+        </property>
+        <property name="properties">
+<!--            properties中，key和value都是字符串类型而map中随意-->
+            <props>
+                <prop key="one">INDIA</prop>
+                <prop key="two">Pakistan</prop>
+                <prop key="three">USA</prop>
+                <prop key="four">USA</prop>
+            </props>
+        </property>
+    </bean>
+
+
+<!--    自动装配（默认no）  byName   容器检测到如果一个 bean 定义设置为自动装配 byName，它有一个 setSpellChecker(...) 方法
+，那么，容器就会自动检测定义名为 spellChecker 的 bean，并且用它来设置这个属性-->
+<!--    byType  检测与需要装配的属性类型相同，则装配，当检测到多个bean时，报异常，下面可以直接把byName改为byType-->
+    <bean id="textEditor" class="org.example.TextEditor" autowire="byName">
+        <property name="name" value="Generic Text Editor"/>
+    </bean>
+    <bean id="spellChecker" class="org.example.SpellChecker">
+    </bean>
+
+<!--    构造器自动装配，与byType类似，不过检测的是构造器，且没有找到会报错-->
+    <bean id="textEditor1" class="org.example.TextEditor" autowire="constructor">
+        <constructor-arg name="name" value="Generic Text Editor"/>
+    </bean>
+
+
+</beans>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+<a href="#">你妈死了</a>
+
+<script>
+    $(document).ready(
+        function () {
+            //有css选择器，下面是xpath选择器
+            $("[href]")// 选取所有带有 href 属性的元素。
+            $("[href='#']")// 选取所有带有 href 值等于 "#" 的元素。
+            $("[href!='#']") //选取所有带有 href 值不等于 "#" 的元素。
+            $("[href$='.jpg']") //选取所有 href 值以 ".jpg" 结尾的元素。
+
+            $("[href='#']").css("background","red")   //改变css
+        }
+    )
+</script>
+
+</body>
+</html>

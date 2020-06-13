@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    body{
+        margin: 0;
+        padding:0;
+    }
+    .father{
+        width: 400px;
+        height: 400px;
+        background: green;
+        /*1.使用绝对定位后，脱标*/
+        /*2.父盒子没有定位，子盒子绝对定位，子盒子是从父盒子出发（如body）*/
+        /*3.转换为inline-block元素*/
+        /*4.父盒子定位了时，子盒子随着父盒子移动而移动*/
+        /*绝对定位是从父盒子出发，父盒子移动子盒子也移动  body也是一个盒子*/
+
+        /*绝对定位时，多个元素会层叠到一起，只要位置相同*/
+        position: absolute;
+        left: 300px;
+        top:0px;
+        /*定位方向：left  right  bottom  top*/
+    }
+    .box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        left: 400px;
+    }
+    </style>
+</head>
+<body>
+    <div class="father">
+    <div class="box"></div>
+    </div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+    <div>谢杰辉</div>
+</body>
+</html>

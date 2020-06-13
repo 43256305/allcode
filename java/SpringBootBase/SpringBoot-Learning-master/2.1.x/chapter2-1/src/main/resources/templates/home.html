@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script language="JavaScript">
+//用jquery给后端发送application/json
+    onload=function () {
+        //当id对应的数据不是数字时，RequestBody不会转换
+        var json1={id:"1",name:"测试",age:33}
+        console.log("ceshi")
+        $.ajax({
+            type:'POST',
+            url:"/users/",
+            dataType:"json",
+            contentType:"application/json",
+            data:JSON.stringify(json1),
+            success: function(data) {
+                console.log(data)
+            },
+            error: function() {
+                console.log("fucking error")
+            }
+        });
+    }
+</script>
+<body>
+<!--{"id":1,"name":"测试大师","age":20}-->
+<h>HELLO WORLD</h>
+
+
+</body>
+</html>

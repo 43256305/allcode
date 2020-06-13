@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object</title>
+    <script type="text/javascript">
+        // 创建对象3种方法
+        var obj={
+            name:'xiejiehui',
+            id:'17201324',
+            disfunc:function () {
+                console.log(this.name)
+            },
+            disfunc2(){
+
+            }
+        }
+        var o=Object.create(obj)
+        obj.disfunc()
+        var o1=Object.create(obj)
+        o1.name='jiehui'  /*改变对象属性*/
+        o1.disfunc()
+        for (x in o){
+            console.log('快速遍历'+x)   /*包括函数*/
+        }
+
+
+
+        function Car(make, model, year){   /*这是一个类*/
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            function f() {
+                alert('this is f function')
+            }
+        }
+        Car.prototype.functionname=function () {  /*使用此方法加入方法或属性*/
+            alert('this is car object')
+        }
+        var mycar = new Car("Eagle", "Talon TSi", 1993);  /*生成实例*/
+        mycar.functionname()
+
+
+        var Cat={
+            // 理解  function(){}中构造的cat返回给了creatNew
+            creatNew:function () {
+                var cat={}  /*这是使用了第一种方法间接构造*/
+                cat.name='大猫'
+                var password='123456'  /*私有属性*/
+                cat.makeSound=function () {
+                    alert('this is 大猫')
+                }
+                return cat
+            }
+        }
+        var cat1=Cat.creatNew()
+        cat1.makeSound()
+
+
+        //class的构造
+        class Animal{
+            constructor(name){
+                this.name=name
+            }
+            getname(){
+                return this.name
+            }
+            static getAnimal(){
+                return 'animal'
+            }
+        }
+        let a=new Animal('tiger')
+        alert(a.getname())
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

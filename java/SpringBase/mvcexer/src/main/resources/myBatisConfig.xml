@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 配置全局属性 -->
+<!--    详情：http://www.tianshouzhi.com/api/tutorials/mybatis/379-->
+    <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 当数据库中设置了自增时，传入没有设置id的Teacher对象，他会自动帮我们
+        把生成id set进这个对象-->
+        <setting name="useGeneratedKeys" value="true" />
+
+        <!-- 使用列别名替换列名 默认:true -->
+<!--        当表和POJO中的字段名不相同时，在mapper中可以用别名的方法映射：as-->
+        <setting name="useColumnLabel" value="true" />
+
+        <!-- 开启驼峰命名转换:Table{create_time} -> Entity{createTime} -->
+<!--        这也是实体与表映射的方法，与上面的useColumnLabel作用相同，用法不同-->
+<!--        还可以用resultMap映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+
+    </settings>
+</configuration>

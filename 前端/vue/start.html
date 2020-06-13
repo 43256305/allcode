@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <input type="button" v-on:click="getMessage()" value="click">
+        <p>{{msg}}</p>
+        <ol>
+            <li v-for="student in students" v-text="student.name"></li>
+        </ol>
+    </div>
+</body>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+    var vue=new Vue({
+        el:"#app",
+        data:{
+            msg:"This is message....",
+            students:[]
+        },
+        methods:{
+            getMessage:function () {
+                axios.get("https://localhost:8080/api/v1/students/")
+                .then(response=>{
+                    this.students=response.data
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script type="text/javascript">
+        /*this实际上指向的是指向调用它的对象*/
+        function a() {
+            var user='xie'
+            console.log(this)  /*window  调用它的对象为window*/
+            console.log(this.user)  /*undefined*/
+        }
+        a()
+        window.a()  /*与直接调用a()相同*/
+
+        var o={  /*为new Object()的简写，生成一个对象  对象有变量和函数，可以用对象.属性  对象.方法调用*/
+            user:'xie',
+            fn:function () {
+                /*这个函数写法的理解：在js中所有语法，操作都有返回值（本身或者undefined  如a=3的返回值为3，所有b=a=3成立）
+                * 又如：var f=function(){}  先执行function，再把函数返回给f
+                * 闭包：子函数调用父函数的变量*/
+                console.log(this.user)    /*xie*/
+            }
+        }
+        o.fn()
+
+        window.o.fn()
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

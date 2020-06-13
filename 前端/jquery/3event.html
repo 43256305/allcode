@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+
+<p>这是p标签</p>
+<div>这是div标签</div>
+<button>按钮</button>
+
+<script>
+    $(document).ready(
+        function () {
+            $("p").click(function () {  //把要执行的元素放在click()中
+                $("p").hide()  //hide(speed,callback)  show(speed,callback)
+            })
+            $("button").click(function () {
+                $("p").toggle()   //toggle(speed,callback)通过此方法，分别运行hide与show
+            })
+        }
+    )
+</script>
+
+</body>
+</html>

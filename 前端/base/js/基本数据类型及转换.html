@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+//基本数据类型
+        //https://segmentfault.com/a/1190000008472264
+        //js基本数据类型包括string，sumber，boolean，Null，Undefined（值不可改变，改变的是指向它的为指针）
+        //引用数据类型：对象（Object），数组（Array），函数（Function）（引用指向对象，比较是引用的比较（地址），特性与java一样）
+
+//类型转换string-number   （String()  Number()）
+        var n1=1.2;
+        var n2=String(n1); //转换为string，可以转换number，boolean，Date等
+        document.write(n2+typeof(n2)+"<br>");
+
+
+        var n1="12.34kjkjkj1212"
+        document.write(Number(n1)+"<br>");  //转换为number，只有当数据确认为number（没有其他字符）时才可以用，要不然会返回为NaN
+        document.write(Number("0100.90")+"<br>")
+        document.write(parseInt(n1)+"<br>");  //从前面开始转换，遇到其他字符停止
+        document.write(parseFloat(n1)+"<br>");
+
+        document.write(Boolean(0)+"<br>");  //与c语言一样，0与null为false，非0为true
+        document.write(Boolean(null)+"<br>");
+        if (10){
+            document.write("0与null为false，非0为true"+"<br>")
+        }
+
+//生命周期，全局变量：没有声明再函数内，如上面的n1，局部变量，声明在函数内的
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

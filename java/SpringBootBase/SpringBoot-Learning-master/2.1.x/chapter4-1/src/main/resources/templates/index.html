@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--下面这一行用于解析下面的 th标签，没有会报错-->
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head lang="en">
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+<!--获取变量值用${}   对于javabean直接使用对象名.属性名获取}-->
+<h1 th:text="${host}">Hello World</h1>
+<!--另外$表达式只能写在th标签内部,不然不会生效,上面例子就是使用th:text标签的值替换h1标签里面的值,
+至于p里面的原有的值只是为了给前端开发时做展示用的.这样的话很好的做到了前后端分离.-->
+
+<a th:href="@{http://blog.csdn.net/u012706811}">绝对路径</a>
+<a th:href="@{/}">相对路径</a>
+<a th:href="@{css/bootstrap.min.css}">Content路径,默认访问static下的css文件夹</a>
+
+<form action="/" method="post">
+    id:<input type="text" name="no">
+    <input type="submit" value="提交">
+</form>
+<h2><a href="login?type=1">login</a></h2>
+<h2><a href="login?type=0">logout</a></h2>
+<img src="spring.png" alt="spring.png">
+
+<table border="1">
+    <tr>
+        <td>Student No</td>
+        <td>Student Name</td>
+        <td>Age</td>
+    </tr>
+<!--    名字与controller中addtribute一致   student：ArrayList<Student>-->
+    <tr th:each="s:${students}">
+        <td th:text="${s.id}"></td>
+        <td th:text="${s.name}"></td>
+        <td th:text="${s.age}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

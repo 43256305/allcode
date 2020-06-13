@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="application/javascript">
+        onload=function() {   /*加载完成页面后自动执行，不需要函数名*/
+            var d=document.getElementsByClassName('father')[0]    /*注意用这个方法时返回的是数组*/
+            d.style.background='red'
+            d.style.width='100px'   /*注意加px*/
+            d.style.height='100px'
+            setTimeout(function () {
+                d.style.width="500px"   /*只执行一行代码也要加函数*/
+            },1000)
+            setTimeout(function () {   /*注意，如果不需要参数，直接写f，1000，需要参数只能这样写，要不然不会延迟，会立即执行（因为加了括号）*/
+                f(d)
+            },1000)   /*注意，setTimeout中都不需要使用引号*/
+
+        }
+        function f(d) {
+            d.style.width=(parseInt(d.style.width)+10)+'px'   /*把width变为int，自动去掉了后面的px*/
+            // alert(d.style.width)
+
+            var e=setTimeout(function () {
+                f(d)
+            },100)
+            if(d.style.width=='800px'){
+                clearTimeout(e)        /*在事件内清除事件  setInterval相同*/
+                alert(d.style.width)
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--<div class="father" onclick="f()">father
+        <div class="son">son</div>
+    </div>-->
+    <div class="father" >father
+        <div class="son">son</div>
+    </div>
+</body>
+</html>

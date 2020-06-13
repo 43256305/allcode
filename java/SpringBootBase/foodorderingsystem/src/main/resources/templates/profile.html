@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<body>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="http://localhost:8080/home">
+                    <svg class="bi bi-arrow-left" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center col-md-12">
+            <h2>个人信息</h2>
+            您在餐馆服务中使用的基本信息，例如您的姓名
+        </div>
+    </div>
+    <div class="row">&nbsp</div>
+    <div class="row">
+        <div class="col-md-12 col-md-push-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header"><h3>个人资料</h3></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">向他人展示的信息</h5>
+                    <p class="card-text">点击右箭头修改信息</p>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>工号</td>
+                            <td th:text="${manager.id}" id="id">1000</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>姓名</td>
+                            <td th:text="${manager.name}">jack</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <a id="name" href="/modifyProfile?name=name&value=">
+                                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>性别</td>
+                            <td th:text="${manager.sex}">男</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <a id="sex" href="/modifyProfile?name=sex&value=">
+                                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-md-push-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header"><h3>其他信息</h3></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">私密信息</h5>
+                    <p class="card-text">点击右箭头修改信息</p>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>密码</td>
+                            <td th:text="${manager.password}">123456</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <a id="password" href="/modifyProfile?name=password&value=">
+                                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>联系电话</td>
+                            <td th:text="${manager.telephone}">18379582637</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <a id="telephone" href="/modifyProfile?name=telephone&value=">
+                                    <svg class="bi bi-chevron-right" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" clip-rule="evenodd"/>
+                                    </svg>
+                                </a>
+                            </button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script language="JavaScript">
+    $(document).ready(function () {
+        $("a").click(function () {
+            if ($(this).attr("href")!="http://localhost:8080/home"){
+                $(this).attr("href",$(this).attr("href")+$(this).parent().parent().prev().text()+"&id="+$("#id").text())
+            }
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        function test(){
+            var arr=[123,"xiejiehui",234];
+            document.writeln(arr.join("."))  //将所有元素组成一个字符串，以join中的符号为分隔符
+            document.writeln(typeof(arr.join("."))+"  arr："+typeof arr);
+            for (var x in arr){  //数组可以用 for in循环
+                document.writeln(arr[x]);
+            }
+            document.writeln("<br>")
+            //增
+            arr[arr.length]="456"
+            document.writeln(arr)
+            //删
+            arr.splice(arr.length-1,1)  //从1一个参数开始，删除第二个参数的个数，把删除的位置替换成第三个参数，并返回删除的几个元素
+            document.writeln(arr)
+
+        }
+        test();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

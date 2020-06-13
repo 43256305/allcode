@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        // onload=function () {
+        //     var d=document.getElementsByClassName('father')[0]
+        //     alert(d.innerHTML)   /*返回的是father标签下的所有*/
+        //     alert(d.innerText)   /*返回标签中的所有文本值*/
+        //
+        // }
+        onload=function () {
+            var f=document.forms['myForm']
+            f[1].disabled=true
+            f[2].disabled=true
+            f['userName'].onkeyup=f3  /*在js中绑定事件（不知道为什么addeventlistener方法没用）       任何操作form表单的代码都不要放在
+                onsubmit事件中，容易失效*/     /*注意绑定事件不需要（），要不然加载此函数时绑定事件就会执行一次*/
+        }
+
+        function f() {
+            var f=document.forms['myForm']   /*也可以不用加elements*/
+            var f1=document.getElementsByName('myForm')[0].elements   /*如果不是按表单的方式获取表单则必须要elements（获取任何标签的子元素）*/
+            alert(f1.length)
+            alert(f['userName'])   /*可以通过名字访问input*/
+            alert(f.length)
+
+        }
+        function f3() {
+            var f=document.forms['myForm']
+            if(f[0].value!=17201324){
+                f[1].disabled=true  /*注意，disabled只能用在校验输入框中使用，其他时候失去效果，如在上一个函数中  任何操作form表单的代码都不要放在
+                上一个onsubmit事件中*/
+                f[2].disabled=true
+            }else{
+                f[1].disabled=false  /*当输入1720132时，f[1,2]的disabled值就已经设置成了true，所有要重新设置回来*/
+                f[2].disabled=false
+                f[1].focus()   /*获取焦点*/
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="father" >father
+    <div class="son">son</div>
+</div>
+<form action="" name="myForm" onsubmit="f()" name="myForm">  <!--操作form时用name ,onsubmit是提交表单时执行函数-->
+    用户名：<input type="text" name="userName">   <!--onkeup每删除或添加一个值都会执行一次（键盘松开执行）
+    onkeydown是键盘按下去执行-->
+    密码：<input type="password" name="password1">
+    <input type="submit" name="submit1">
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    注意，使用注解一定要加上这一行-->
+    <context:annotation-config/>
+
+    <bean id="textEditor" class="org.example.TextEditor">
+        <property name="name" value="required field"/>
+    </bean>
+    <bean id="spellChecker" class="org.example.SpellChecker"></bean>
+
+    <bean id="student1" class="org.example.Student">
+        <property name="name" value="xie"/>
+        <property name="age" value="12"/>
+    </bean>
+
+    <bean id="student2" class="org.example.Student">
+        <property name="name" value="jie"/>
+        <property name="age" value="13"/>
+    </bean>
+
+    <bean id="profile" class="org.example.Profile"></bean>
+</beans>

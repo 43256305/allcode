@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-push-3">
+            <form action="#" th:action="@{/login}" th:object="${user}" method="post" class="form-inline" role="form">
+                <h1>Please Login First...</h1>
+                <table>
+                    <tr>
+                        <td>Account:</td>
+                        <td><input type="text" th:field="*{account}" class="form-control" required/></td>
+                        <td th:if="${#fields.hasErrors('account')}" th:errors="*{account}"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="text" th:field="*{password}" class="form-control" required/></td>
+                        <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></td>
+                    </tr>
+                    <tr>
+                        <td><button type="submit" class="btn btn-default">Login</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="btn" value="Click">
+<div id="display"></div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#btn").click(function (e) {
+            $.ajax({
+                type:"get",
+                //访问https时chrome要打开一次此页面，信任证书   程序还要运行跨域访问：@CrossOrigin
+                url:"https://localhost:8080/api/v1/students/",
+                success:function (response) {
+                    let students=response;
+                    // $("div").text(`id:${student.id},name:${student.name},age:${student.age}`);
+                    students.forEach(student=>{  //循环语句，studentslist中把每一份赋值给student
+                        $("div").append(`id:${student.id},name:${student.name},age:${student.age}`);
+                    })
+                }
+            })
+        })
+
+    })
+</script>
+</html>

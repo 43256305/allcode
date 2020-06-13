@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorld" class="org.example.HelloWorld">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+    <bean id="cStartEventHandler" class="org.example.CStartEventHandler"/>
+    <bean id="cStopEventHandler" class="org.example.CStopEventHandler"/>
+
+<!--    自定义事件-->
+    <bean id="customEventHandler"
+          class="org.example.CustomEventHandler"/>
+    <bean id="customEventPublisher"
+          class="org.example.CustomEventPublisher"/>
+</beans>

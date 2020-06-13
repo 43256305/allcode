@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.DAO.ManageTea">
+<!--    id必须配置，用来代表这条语句（与接口中的对应方法名字相同）  一个命名空间（namespace）代表一个dao接口-->
+<!--    flushCache任何时候只要语句被调用，都会导致本地缓存和二级缓存都会被清空，默认值：true（对应插入、更新和删除语句）-->
+    <insert id="insertTea" flushCache="true" >
+    INSERT INTO TEACHER(tea_name,password) values (#{name},#{password});
+    </insert>
+
+<!--reslutType是返回类型，可以是容器，或者对象，或者基本类型-->
+<!--    下面的as是用起别名的方法达到映射的目的-->
+<!--    注意，所有的返回都是以list的形式，所以我们只需要返回List中的类型，比如我们想要List<Teacher>，只需要Teacher就可以-->
+    <select id="listTeacher" resultType="Teacher">
+        SELECT tea_id as id,tea_name as name,password from TEACHER;
+    </select>
+
+    <select id="getTeacher" parameterType="long" resultType="org.example.POJO.Teacher">
+        SELECT tea_id as id,tea_name as name,password FROM TEACHER WHERE tea_id=#{id};
+    </select>
+
+    <delete id="deleteTeacher" parameterType="long">
+        DELETE FROM TEA_COU WHERE TEA_ID=#{id};
+        DELETE from TEACHER WHERE tea_id=#{id};
+    </delete>
+
+    <insert id="teachCourse">
+        INSERT ignore INTO tea_cou(tea_id,cou_id) values (#{tea_id},#{cou_id});
+    </insert>
+
+    <select id="getCourse" resultType="Course" parameterType="long">
+        SELECT tea_cou.cou_id as id,cou_name as name FROM COURSE INNER JOIN TEA_COU ON course.cou_id=tea_cou.cou_id where tea_cou.tea_id=#{id};
+    </select>
+
+</mapper>

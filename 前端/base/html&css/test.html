@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <script type="text/javascript">
+        function f() {
+            var t=document.getElementById('table')
+            t.innerHTML=t.innerHTML+'<tr>\n' +
+                '            <td>1</td>\n' +
+                '            <td>2</td>\n' +
+                '        </tr>'
+        }
+    </script>
+</head>
+<body>
+    <table border="1" cellspacing="0" width="200px" height="200px" id="table">
+        <tr>
+            <th>1</th>
+            <th>2</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <input type="button" value="增加" onclick="f()">
+</body>
+
+</html>

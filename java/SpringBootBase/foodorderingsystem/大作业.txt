@@ -1,0 +1,39 @@
+create table user(
+id bigint not null auto_increment primary key,
+name varchar(20) not null,
+iden int not null 
+)engine=InnoDB auto_increment=100000 default charset=utf8;
+
+create table manager(
+id bigint not null auto_increment primary key,
+name varchar(20) not null,
+password varchar(20) not null,
+telephone bigint(11),
+sex varchar(2)
+)engine=InnoDB auto_increment=1000000 default charset=utf8;
+
+create table application(
+id bigint not null auto_increment primary key,
+user_id bigint not null,
+iden int not null,
+toIden int not null,
+foreign key(user_id) references user(id)
+)engine=InnoDB auto_increment=1000000 default charset=utf8;
+
+create table record(
+id bigint not null auto_increment primary key,
+timestamp long not null,
+applicant_id bigint not null,
+message varchar(100),
+handler_id bigint not null,
+foreign key(applicant_id) references user(id),
+foreign key(handler_id) references manager(id)
+)engine=InnoDB auto_increment=1000000 default charset=utf8;
+
+insert into manager(name,password,telephone,sex) values('xie',123456,11111111111,'男');
+insert into user(name,iden) values('谢杰辉',1);
+insert into user(name,iden) values('会接屑',1);
+insert into user(name,iden) values('小明',1);
+insert into user(name,iden) values('小张',1);
+insert into application(user_id,iden,toIden) values(100000,1,2);
+insert into application(user_id,iden,toIden) values(100001,1,2);

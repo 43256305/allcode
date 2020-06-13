@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    class Person{
+
+        constructor(no,name) {
+            this.no=no;
+            this.name=name;
+        }
+        say(){
+            console.log(`no:${this.no},name:${name}`)
+        }
+    }
+    class Student extends Person{
+        constructor(no,name,age) {
+            super();
+            this.no=no;
+        }
+        say(){
+            console.log(`no`);
+        }
+    }
+
+    var student=new Student("17201324"+"xiejiehui"+22)
+    student.say()
+
+</script>
+</html>

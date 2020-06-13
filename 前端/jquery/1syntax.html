@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<!--    从网上加载jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Document</title>
+</head>
+<!--https://www.w3school.com.cn/jquery/index.asp  w3c基础教程-->
+<body>
+    <input type="checkbox" id="cr"><label for="cr">我同意上面的制度</label>
+    <!-- <script>
+        $(document).ready(function () {  //
+            var $cr = $("#cr");
+          //  var cr = $cr[0];    //jquery操作都要$符号
+            var cr=$cr.get(0);
+            $cr.click(function () {
+                if (cr.checked){      //虽然系统没有提示checked方法，但确实起作用了
+                    alert("hello");
+                }
+        })
+        })
+
+    </script> -->
+
+    <!-- //另一种方法只用jquery -->
+    <script>
+        $(document).ready(function(){   //这段代码的作用是：为了防止文档在完全加载（就绪）之前运行 jQuery 代码
+            var $cr=$("#cr");
+            $cr.click(function(){     //onclick  被点击时发生所指定的方法
+                if ($cr.is(":checked")){
+                    alert("jquery");
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

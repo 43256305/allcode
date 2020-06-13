@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    scope为bean的作用域，singleton（默认），容器中只有一个-->
+<!--    <bean id="helloWorld" class="org.example.HelloWorld" scope="singleton">-->
+<!--        <property name="message" value="Hello World!" />-->
+<!--    </bean>-->
+
+<!--prototype作用域表示每次特定的 bean 发出请求时 Spring IoC 容器就创建对象的新的 Bean实例-->
+    <bean id="helloWorld" class="org.example.HelloWorld" scope="prototype">
+        <property name="message" value="Hello World!" />
+    </bean>
+
+<!--    init和des方法的返回值都为void-->
+    <bean id="initDestroy" class="org.example.InitDestroy" init-method="init" destroy-method="destroy">
+        <property name="message" value="Hello World!"/>
+    </bean>
+
+<!--    BeanPostProcessor：容器会自动检测与之想匹配的bean，把下面这句写到别的地方也能匹配到-->
+    <bean class="org.example.PostProcessor"/>
+
+<!--    如果有太多具有相同名称的初始化或者销毁方法的 Bean，那么你不需要在每一个 bean 上声明初始化方法和
+销毁方法。框架使用 元素中的 default-init-method 和 default-destroy-method 属性（写在最上面）-->
+</beans>

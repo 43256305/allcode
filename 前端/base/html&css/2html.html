@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" content="测试，html2，web">
+    <!-- <meta http-equiv="refresh" content="5;https://www.baidu.com"> -->  <!-- 网页重定向 -->
+    <link rel="stylesheet" href="">   <!-- 链接外部样式表 -->
+    <link rel="icon" href="../6.10/tb.gif">  <!-- 这只icon -->
+    <title>2html</title>
+</head>
+<body>
+    <!-- 表格 -->
+    <!-- 边框宽度  单元格之间的距离  内容与边框距离   align内容靠左left，居中，靠右right  bgcolor背景-->
+    <table border="1" width="100" height="100" cellspacing="0"  cellpadding="3" align="center" bgcolor="yellow">
+        <tr>
+            <th>表头</th>
+            <th>表头</th>
+        </tr>
+        <tr align="center">    <!-- 行 -->
+            <td>xie</td>   <!-- 列 -->
+            <td>jie</td>
+        </tr>
+        <tr>
+            <td>hui</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <table border="1" width="100" height="100">
+        <caption>表头</caption>
+        <tr valign="bottom">     <!-- 垂直对齐 -->
+            <th>0</th>   <!-- 表格标题 -->
+            <th>-0</th>
+            <th>+0</th>
+        </tr>
+        <tr>
+            <td rowspan="2">1</td>   <!-- 合并同一列的单元格 -->
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    <!-- 表单   method:get  post(安全性高)-->
+    <form action="" method="get">
+        文本：<input type="text" maxlength="12" >   <!-- 设置最大输入值 -->
+        昵称：<input type="text" readonly="readonly">   <!-- 只读 -->
+        可是：<input type="text" value="可是">   <!-- 提示 -->
+        但是：<input type="text" disabled="disabled">   <!-- 输入框未激化，不能输入 -->
+        密码：<input type="password" name="psw" >
+        <!-- 只有将name设置相同的时候，才有单选效果 -->
+        <!-- check设置默认选择 -->
+        <input type="radio" name="gender" checked="checked">男
+        <input type="radio" name="gender" >女
+        <!-- 下拉列表 -->
+        <select multiple="multiple">
+            <option selected="selected">江西</option>   <!-- 默认选中 -->
+            <option>广州</option>
+            <option>北京</option>
+            <!-- 分组 -->
+            <optgroup label="河相关">   <!-- 分组名称 -->
+            <option>河南</option>
+            <option>河北</option>
+            </optgroup>
+        </select>
+        <!-- 多选框 -->
+        <input type="checkbox" checked="checked">喝酒
+        <input type="checkbox">汤头
+        <input type="checkbox">抽烟
+        <!-- 多行文本框 -->
+        <textarea cols="30" rows="50"></textarea>   <!-- cols控制输入字符长度  rows控制输入行数 -->
+        <input type="file">  <!-- 上传文件 -->
+        <input type="submit">  <!-- 文件提交按钮 -->
+        <input type="button" value="普通按钮">
+        <input type="image" src="../6.10/tb.gif">  <!-- 图片按钮 -->
+        <input type="reset">   <!-- 重置按钮 -->
+        <input type="time">   <!-- 时间控件等 -->
+        <fieldset>   <!-- 表单信息分组 -->
+            <legend>分组信息</legend>
+            开机开卷考就看
+        </fieldset>
+
+    </form>
+    
+</body>
+</html>

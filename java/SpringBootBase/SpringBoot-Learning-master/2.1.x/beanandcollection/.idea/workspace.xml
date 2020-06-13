@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7bc7c3b7-fb53-4b4d-b6d3-26b4af97cb53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/AndroidTest/AndroidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/Experiment4/Experiment4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/TermProject/TermProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/TermProject/web/pic/000001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/TermProject/web/pic/000002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/TermProject/web/pic/000003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/base1/base1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/base2/base2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/base3/base3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/jspbase1/jspbase1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/test/test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/test2/src/action/HelloWorld.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/test2/test2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../javaweb/test2/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/bin/BallControl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/bin/BallPane.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/src/BallControl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaFX_TimeLine/JavaFX_TimeLine/src/BallPane.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../MyWeb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../MyWeb/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Pro_Brush/Pro_Brush/bin/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Pro_Brush/Pro_Brush/bin/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/bin/experiment_2/Combine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/bin/experiment_2/Experiment_2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/bin/experiment_2/Goods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/bin/experiment_2/SalesRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/date.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/newtext.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/src/experiment_2/Combine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/src/experiment_2/Experiment_2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/src/experiment_2/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_2/src/experiment_2/SalesRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/17201324-谢杰辉-第五次实验报告.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/Data.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Agent$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Agent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/AgentVip$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/AgentVip.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Animal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Canary.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/ClownFish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Crocodile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Dolphin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Enter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Fly.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/FlyBoat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/FlyFish.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/FlyPerson.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/FxElert.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Interaction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Lizard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Mermaid.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Message.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/MyFx$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/MyFx.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Parrot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Performance.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Program.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/ReadFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Score.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/SeaWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Seal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Sealion.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Shark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/StaffPer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Swim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Tourist.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Tourists.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Trainer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIParade$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIParade$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIParade$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIParade.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIScore$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UIScore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/UnderseaBoat.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/Vip.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/bin/experiment_3/WriteFile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/newfile.cld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Agent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/AgentVip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Canary.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/ClownFish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Crocodile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Dolphin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Enter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Fly.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/FlyBoat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/FlyFish.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/FlyPerson.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/FxElert.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Interaction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Lizard.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Mermaid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/MyFx.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Parrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Performance.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Program.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/ReadFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Score.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/SeaWorld.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Seal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Sealion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Shark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Staff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/StaffPer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Swim.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Tourist.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Tourists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Trainer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/UIParade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/UIScore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/UnderseaBoat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/Vip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/src/experiment_3/WriteFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/tourist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/vip.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/小丑鱼.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/海狮.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/海豚.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/海豹.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/潜水艇.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/美人鱼.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/蜥蜴.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/金丝鸟.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/飞人.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/飞艇.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/飞鱼.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/鲨鱼.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/鳄鱼.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../experiment_5/鹦鹉.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Event.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/FlashText$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/FlashText$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/FlashText.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/MyJavaFX.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Sort$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Sort$1$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Sort$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Sort.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Wumpus$WumpusAttack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/Wumpus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/bin/javaFXproject/rec.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/src/javaFXproject/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/src/javaFXproject/FlashText.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/src/javaFXproject/MyJavaFX.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/src/javaFXproject/Sort.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../javaFXproject/src/javaFXproject/Wumpus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../jspbase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../jspbase/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mysql_demo/bin/mysql_demo/Demo.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mysql_demo/bin/mysql_demo/Demo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mysql_demo/mysql_demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mysql_demo/mysql_demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../mysql_demo/src/mysql_demo/Demo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../mysql_demo/src/mysql_demo/Demo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/UsageFunction/GetOb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/UsageFunction/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/changeMessage/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/changeMessage/TestClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/getMessage/FatherClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/getMessage/SonClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/bin/getMessage/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/reflection.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/UsageFunction/GetOb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/UsageFunction/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/changeMessage/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/changeMessage/TestClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/getMessage/FatherClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/getMessage/SonClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reflection/src/getMessage/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reguexpression/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reguexpression/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reguexpression/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reguexpression/bin/reguexpression/Text.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../reguexpression/src/reguexpression/Text.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/out/production/软件测试/Nextdate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/out/production/软件测试/Rifle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/out/production/软件测试/Triangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/src/Nextdate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/src/Rifle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/src/Triangle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../软件测试/软件测试.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\apache-maven-3.6.3\repo" />
+        <option name="mavenHome" value="D:/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZIEqZLCgJ1iGnqpqL1Em0oFScY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="D:/commons-logging-1.2" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RunManager">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+      <module name="beanandcollection" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7bc7c3b7-fb53-4b4d-b6d3-26b4af97cb53" name="Default Changelist" comment="" />
+      <created>1584518399783</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584518399783</updated>
+      <workItem from="1584518402746" duration="4264000" />
+      <workItem from="1584581868473" duration="179000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="105" key="#com.intellij.ide.util.MemberChooser" timestamp="1584521006256">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="105" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584521006256" />
+    <state x="549" y="199" key="FileChooserDialogImpl" timestamp="1584581899496">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="199" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584581899496" />
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom" timestamp="1584531417471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="184" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584531417471" />
+    <state width="1493" height="184" key="GridCell.Tab.0.center" timestamp="1584531417471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="184" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584531417471" />
+    <state width="1493" height="184" key="GridCell.Tab.0.left" timestamp="1584531417471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="184" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584531417471" />
+    <state width="1493" height="184" key="GridCell.Tab.0.right" timestamp="1584531417471">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="184" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584531417471" />
+    <state x="178" y="57" key="new project wizard" timestamp="1584581918032">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="178" y="57" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1584581918032" />
+    <state x="338" y="104" key="spring file set editor" timestamp="1584518462524">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="338" y="104" key="spring file set editor/0.0.1536.824@0.0.1536.824" timestamp="1584518462524" />
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.DAO.ManageCour">
+    <insert id="insertCourse">
+        INSERT INTO COURSE(cou_name) VALUES (#{name});
+    </insert>
+
+    <select id="listCourse" resultType="Course" >
+        SELECT cou_id as id,cou_name as name FROM COURSE;
+    </select>
+
+    <select id="getCourse" resultType="Course" parameterType="long">
+        SELECT cou_id as id,cou_name as name FROM COURSE WHERE cou_id=#{id};
+    </select>
+
+    <delete id="deleteCourse">
+        DELETE FROM TEA_COU WHERE COU_ID=#{id};
+        DELETE FROM COURSE WHERE COU_ID=#{id};
+    </delete>
+</mapper>

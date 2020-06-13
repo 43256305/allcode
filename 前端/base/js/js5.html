@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+// <!--        而JavaScript和HTML之间的交互行为就是通过事件来触发的。-->
+        function f(event) {
+            alert(event.screenX+','+event.screenY+'\n'+event.clientX+","+event.clientY)
+        //    screen是相对整个屏幕，client是相对浏览器可以显示的地方
+        }
+    </script>
+    <style type="text/css">
+        .father{
+            width: 1000px;
+            height: 1000px;
+        }
+    </style>
+</head>
+<body >
+<!--onmousedown鼠标点击发生，onmouseup鼠标抬起发生，onclick点击并且抬起发生-->
+        <div class="father" onmousedown="f(event)">father</div>  <!--body不能设置宽高，body并不代表整个屏幕，所有如果body中没有元素，
+        把点击事件放在body上是不起作用的-->
+
+</body>
+</html>

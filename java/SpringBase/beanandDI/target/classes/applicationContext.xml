@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorld" class="org.example.HelloWorld">
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+    </bean>
+<!--配置这个bean的父bean（效果和类继承一样，这不过这里是对象继承）-->
+    <bean id="helloIndia" class="org.example.HelloIndia" parent="beanTeamplate">
+        <property name="message1" value="Hello India"/>
+        <property name="message3" value="Hello Third India"/>
+    </bean>
+
+<!--    抽象bean模板，供其他bean继承(抽象bean不需要实际的类)，自身不能被创建-->
+    <bean id="beanTeamplate" abstract="true" >
+        <property name="message1" value="Hello World!"/>
+        <property name="message2" value="Hello Second World!"/>
+    </bean>
+
+
+    <!--        DI的两种方法：构造器注入，setter注入（可以混合使用）-->
+    <bean id="spellChecker" class="org.example.SpellChecker"></bean>
+    <bean id="textEditor" class="org.example.TextEditor">
+<!--        构造器注入spellChecker（注入的是bean的id不是class）-->
+        <constructor-arg ref="spellChecker"/>
+    </bean>
+    <bean id="textEditor1" class="org.example.TextEditor">
+<!--        多个参数时可以用index(也可以不用，直接按顺序匹配)，参数为普通类型时，用value，为引用类型时，用ref-->
+<!--        上面用property是用set赋值，而这里是构造器-->
+        <constructor-arg index="0" value="str"/>
+        <constructor-arg index="1" value="0"/>
+    </bean>
+
+    <!--        setter注入-->
+    <bean id="textEditor2" class="org.example.TextEditor">
+<!--        与属性一样，value换成了ref-->
+        <property name="spellChecker" ref="spellChecker"/>
+    </bean>
+
+<!--    setter注入的另一种写法（注意要在xml文件最上面引入xmlns:p），有很多属性时可以用这种方法-->
+<!--    <bean id="textEditor2" class="org.example.TextEditor"-->
+<!--    p:spellChecker-ref="spellChecker"></bean>-->
+
+    <bean id="textEditor3" class="org.example.TextEditor">
+<!--        内部bean（运用setter，构造器注入都需要给被注入的bean一个id，而内部bean不用，内部bean只有外部bean能用）-->
+        <property name="spellChecker">
+            <bean class="org.example.SpellChecker"></bean>
+        </property>
+    </bean>
+</beans>

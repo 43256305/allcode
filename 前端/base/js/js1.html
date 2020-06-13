@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript">
+        function f() {
+            var d=document.getElementById('id')   /*d是一个node节点，下面是查看node节点的名称    元素节点，文本节点，属性节点*/
+            // nodename：元素：标签名，文本：#text，属性：属性名
+            // nodevalue 元素：无，文本：文本值，属性：属性值
+            // nodeType 元素：1，文本：3，属性：2，注释：8
+            alert(d.nodeName+","+d.nodeValue+','+d.nodeType+','+d.childNodes.length)  /*可以看出，他又3个子节点*/
+            // alert(d.childNodes[0].nodeName+','+d.childNodes[0].nodeValue+','+d.childNodes[0].nodeType)
+            // alert(d.childNodes[0]+','+d.childNodes[1]+','+d.childNodes[2].nodeValue)/*三个字节的分别为：jkjkjk，div，空字符串（不是son，son并不属于他的子节点）*/
+            var f=document.getElementsByClassName('father')[0]
+            alert(f.childNodes.length+','+f.children.length)   /*为什么上面的空字符串也当作子元素了呢？因为childNodes这个方法把
+            换行符和空格,注释也当作了子元素(所有node)，
+            重点：：：：而children这个方法只返回元素（标签元素element）*/
+            alert(f.firstElementChild.nodeName+','+f.lastElementChild.nodeName)  /*获取第一个和最后一个子元素  childNodes也有这两个方法*/
+
+            d.style.background='red'  /*改变style*/
+        }
+    </script>
+</head>
+<body>
+    <div class="class1" onclick="f()">你妈死了</div>   <!--这是onclick事件，实际上还有很多事件，如光标移出等-->
+    <div id="id">jkjkjk
+        <div class="class2" onclick="f1()">son</div>
+    </div>
+    <div class="father"><!--在childNodes中这个注释，下面的字和换行符都当成了一个子节点  注释+文本（空格和换行符都是文本）+节点+文本+节点+文本  6个-->
+        kjkjk
+
+        <div class="son"></div>
+        <div class="son1"></div>
+    </div>
+</body>
+<script language="JavaScript">
+    // 当js中不是函数时，应该放在下面（因为不是函数会立即执行，如果放在上面html都没有加载）
+</script>
+</html>

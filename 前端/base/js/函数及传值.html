@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //基本数据类型传的是值的复制，引用数据类型传的是引用的拷贝，f1中的l与f中的l是两个不同的引用都指向[4,5]，所有里面变了外面也变
+        //而f2是把l指向新的对象，自然外面的对象不会改变  其实与java一样（引用的拷贝）
+        f()
+        function f() {
+            var l=[4,5]
+            f1(l)
+            document.write("f1改变后的值"+l+"<br>")
+            f2(l)
+            document.write("f2改变后的值"+l+"<br>")
+        }
+        function f1(l) {
+            document.write("改变前的function里面："+l+"<br>")
+            l[2]=6
+        }
+        function f2(l) {
+            l=[10,11,12]
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

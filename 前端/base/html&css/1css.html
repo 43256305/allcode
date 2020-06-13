@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css1</title>
+    <style type="text/css">
+        div{
+            background-color: #999999;    /*背景颜色*/
+            color: rgb(111,222,333);   /*字体颜色*/
+            font-size: 40px;
+        }
+        .class2{
+            color: rgba(111,111,222,0.5);   /*透明度 0-1*/
+        }
+        #id1{
+            background-color: #679;
+        }
+
+        div.class1{   /*交集   标签+类或id*/
+            background-color: black;
+        }
+        del strong{   /*后代  选择器+选择器*/
+            background-color: red;
+        }
+        span>span{    /*直接下一代  selector>selector*/
+            background-color: #882233;
+        }
+        em,ins{
+            background-color: #776688;
+            font:italic 700 30px/50px 宋体;  /*倾斜，加粗（100-900），字体大小（必须）/行高，字体（必须）   按照顺序*/
+        }
+    </style>
+</head>
+<body>
+    <div class="class1">谢杰辉</div>
+    <p class="class2">谢杰辉  class2</p>
+    <p id="id1">谢杰辉 id</p>
+    <del><strong>谢杰辉 后代选择器</strong></del>
+    <span>
+        <strong>谢杰辉</strong>
+        <span>谢杰辉  子代选择器</span>
+    </span>
+    <ins>谢杰辉  并集</ins>
+    <em>谢杰辉  并集</em>
+</body>
+</html>

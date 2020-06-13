@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: layout (~{::body},'application')}">
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <td>id</td>
+                    <td>申请人id</td>
+                    <td>申请人身份</td>
+                    <td>要申请的身份</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="a:${list}">
+                    <td th:text="${a.id}"></td>
+                    <td th:text="${a.applicantId}"></td>
+                    <td th:if="${a.iden}==1">普通用户</td>
+                    <td th:if="${a.iden}==2">店主</td>
+                    <td th:if="${a.iden}==3">骑手</td>
+                    <td th:if="${a.toIden}==1">普通用户</td>
+                    <td th:if="${a.toIden}==2">店主</td>
+                    <td th:if="${a.toIden}==3">骑手</td>
+                    <td><button type="button" class="btn btn-default agree">同意</button>
+                        <button type="button" class="btn btn-default reject">拒绝</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script language="JavaScript">
+    $(document).ready(function () {
+        //同意申请
+        $(".agree").click(function (e) {
+            $.ajax({
+                type:"post",
+                url:"http://localhost:8080/api/v1/agreeApplication",
+                data:{"id":$(this).parent().prev().prev().prev().prev().text()},
+                success:function (response) {
+                    location.reload(true)  //刷新页面
+                }
+            })
+        })
+
+        //拒绝申请
+        $(".reject").click(function () {
+            $.ajax({
+                type:"post",
+                url:"http://localhost:8080/api/v1/rejectApplication",
+                data:{"id":$(this).parent().prev().prev().prev().prev().text()},
+                success:function (response) {
+                    location.reload(true)  //刷新页面
+                }
+            })
+        })
+    })
+</script>
+</body>
+</html>
