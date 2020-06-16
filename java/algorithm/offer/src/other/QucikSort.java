@@ -11,15 +11,19 @@ import java.util.Arrays;
  **/
 public class QucikSort {
     public static void main(String[] args) {
-//        int[] array1={3,5,1,9,0,2,6};
-//        int[] array2={1,0};
-//        int[] array3={0};
-//        quickSort(array1,0,array1.length-1);
-//        quickSort(array2,0,array2.length-1);
-//        quickSort(array3,0,array3.length-1);
-//        System.out.println(Arrays.toString(array1));
-//        System.out.println(Arrays.toString(array2));
-//        System.out.println(Arrays.toString(array3));
+        int[] array1={3,5,1,9,0,2};
+        int[] array2={1,0};
+        int[] array3={3,2,3,1,2,4,5,5,6};
+        quickSort(array1,0,array1.length-1);
+        quickSort(array2,0,array2.length-1);
+        quickSort(array3,0,array3.length-1);
+        System.out.println(Arrays.toString(array1));
+        System.out.println(Arrays.toString(array2));
+        System.out.println(Arrays.toString(array3));
+
+        int[] array={3,5,7,9,1,2};
+        quickSort(array,0,array.length-1);
+        System.out.println(Arrays.toString(array));
 
         //对字符串排序
         String s="EXAMPLE";
@@ -39,6 +43,10 @@ public class QucikSort {
 
     /**
     * @Description: 数组每一次排好一个元素，然后把排好的元素左和边的数组排序
+     * 最坏情况，每次划分都是分为两个数组，一个数组长度为0，另一个为n-1（即已经排好序的数组，如1 2 3 4 5，每一轮划分j都要遍历到第一个元素）
+     * 一共进行n此划分，时间为：n^2
+     * 最好情况：每次划分都把数组平均分为两份 (下面递推关系中，n每次划分的时间，2M(n/2)为下面两次递归需要的时间)
+     * M(n)=n+2M(n/2)=2n+4M(n/4)=3n+8M(n/8)=n*logn+NM(1)
      * 变量start，end
     * @Param: 
     * @return: 
@@ -55,38 +63,85 @@ public class QucikSort {
     }
 
     /**
-    * @Description: 函数目的：把array[start]放在，start左边都小于array[start]，右边都大于array[start]的位置上：j，也就是说
-     * array[j]已经不用排序了，继续排被j分割出的两个子数组
-     * 变量i，j
+    * @Description: 函数目的：把temp放在，temp左边都小于他，右边都大于他的位置上：j，也就是说
+     * j已经不用排序了，继续排被j分割出的两个子数组
+     * 变量  temp(基准值，即起始位置)，i，j
     * @Param: 
     * @return: 
     * @Author: xjh
     * @Date: 2020/3/25
     */
-    public static int partition(int[] array,int start,int end){   //start,end是子数组的开头和结束下标
-        int i=start+1;
-        int j=end;
-        //上面的if和下面的循环都不能等于，因为每一轮的任务就是找出一个数，既然就是一个数，就不需要找了。
-        while (i<j){   //找出每一个比array[start]大的元素（i），与比array[start]小的元素(j)，i与j交换位置，最后把array[start]放在j上
-            while (i<end&&array[i]<=array[start]){  //等于的时候不需要交换位置，i继续前进（如果等于了，i在++就越界了）
-                i++;
+    private static int partition(int[] arr, int i, int j) {
+        int temp = arr[i];  //给基准位置挖一个坑
+        while (j > i) {
+            // 找出一个比基准数小的数 （因为最后要形成基准的左边都比基准小，所以放到基准位置上的元素一定比基准小，所以从后面开始找）
+            while (temp <= arr[j] && i < j) {
+                --j;
             }
-            while (j>start&&array[j]>=array[start]){
-                j--;
+            // 当基准数大于了 arr[j]，则填坑（填坑后形成一个新坑，j遍历时填i位置的坑）
+            if (i < j) {
+                arr[i] = arr[j];  //填到i的位置
+                ++i;  //为什么时i++？因为i位置上的坑已经被填了，所以i要前进一位
             }
-            swap(array,i,j);
+            // 现在是 arr[j] 需要填坑了 （i遍历时，填j位置的坑）
+            while (temp >= arr[i] && i < j) {
+                ++i;
+            }
+            if (i < j) {
+                arr[j] = arr[i];
+                --j;
+            }
         }
-        swap(array,i,j);  //撤销最后一次交换（循环停止时一定是i>=j，j指在比start大的元素，i指在比start小的元素上，所以一定要换回来，使得
-        //i指向的元素比start大，j指向的元素比start小，这样start和j交换位置，才会导致j左边的都小于j）
-        //为什么退出循环后需要再交换一次呢？（1.j与i最后交换一次后，i>=j了，退出循环，这时j一定大于start，但是j最后要与start交换位置，
-        // 所以j最后一定要指向比start小的   2.j==start了，交换一次，退出循环，这时start已经被交换到了i的位置上，所以需要再交换回来）
-        swap(array,start,j);
-        return j;  //一个数组划分成两个数组，返回j，j位置上的元素一定在正确的位置上
+        arr[j] = temp;  //最后退出循环时，i一定等于j，因为上面每一个语句都有判断i<j，所以i一等于j，就会退出
+        return j;
     }
 
     public static void swap(int[] array,int x,int y){
         int temp=array[x];
         array[x]=array[y];
         array[y]=temp;
+    }
+
+    /**
+    * @Description: 三数取中
+    * @Param: 
+    * @return: 
+    * @Author: xjh
+    * @Date: 2020/6/15
+    */
+    private static int partitionThree(int[] arr, int left, int right) {
+        // 采用三数中值分割法
+        int mid = left + (right - left) / 2;
+        // 保证左端较小
+        if (arr[left] > arr[right])
+            swap(arr, left, right);
+        // 保证中间较小
+        if (arr[mid] > arr[right])
+            swap(arr, mid, right);
+        // 保证中间最小，左右最大
+        if (arr[mid] > arr[left])
+            swap(arr, left, mid);
+        int pivot = arr[left];   //把左边的数当作基准值（左边比右边小，比中间大）
+        while (right > left) {
+            // 先判断基准数和后面的数依次比较
+            while (pivot <= arr[right] && left < right) {
+                --right;
+            }
+            // 当基准数大于了 arr[right]，则填坑
+            if (left < right) {
+                arr[left] = arr[right];
+                ++left;
+            }
+            // 现在是 arr[right] 需要填坑了
+            while (pivot >= arr[left] && left < right) {
+                ++left;
+            }
+            if (left < right) {
+                arr[right] = arr[left];
+                --right;
+            }
+        }
+        arr[left] = pivot;
+        return left;
     }
 }

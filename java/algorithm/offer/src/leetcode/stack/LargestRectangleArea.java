@@ -80,6 +80,7 @@ public class LargestRectangleArea {
         for (int i = 0; i < n; ++i) {
             ans = Math.max(ans, (right[i] - left[i] - 1) * heights[i]);  //right-left+1为包括最左和最右的距离，right-left-1为
             //不包括最左和最右的距离，（right+left）/2为中间位置  如0 1 2 3 4  4-2-1=1（2） 4-2+1=3（2 3 4） （4+2)/2=3
+            //快捷记忆  相加为求位置，相减为求距离
         }
         return ans;
     }
