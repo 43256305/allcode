@@ -1,4 +1,4 @@
-package leetcode.dfs;
+package leetcode.tree;
 
 import leetcode.TreeNode;
 
