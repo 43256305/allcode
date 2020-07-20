@@ -22,7 +22,7 @@ public class MaxProfit {
         }
         int last=0,profit=0;
         for (int i=0;i<prices.length-1;i++){
-            last=Math.max(0,last+prices[i+1]-prices[i]);   //判断是否为负数
+            last=Math.max(0,last+prices[i+1]-prices[i]);   //判断是否为负数，为负数则last取0，重新开始计算（last相当于最大子序和的sum）
             profit=Math.max(profit,last);
         }
 

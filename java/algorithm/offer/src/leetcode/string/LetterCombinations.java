@@ -48,7 +48,7 @@ public class LetterCombinations {
         }
         ArrayList<String> list=new ArrayList<>();
         char[] temp=listOld.get(listOld.size()-1).toCharArray();
-        for (int i=0;i<temp.length;i++){   //从old的最后一个字符串开始，分解成字符存入list
+        for (int i=0;i<temp.length;i++){   //把old的最后一个字符串，分解成字符存入list
             list.add(String.valueOf(temp[i]));
         }
         for (int i=listOld.size()-2;i>=0;i--){  //从倒数第二个开始遍历old

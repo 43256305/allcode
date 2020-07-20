@@ -2,7 +2,7 @@ package leetcode.tencentfifty;
 
 /**
  * @program: offer
- * @description:买卖股票的最佳时机2    要求两点相减最大，可以转换为求p数组最大子序列和。
+ * @description:买卖股票的最佳时机2
  * @author: xjh
  * @create: 2020-06-05 19:50
  **/

@@ -66,6 +66,7 @@ public class MergeTwoLists {
 
     /**
     * @Description: 合并k个链表   暴力法  n（数组）*m（最长链表）
+     * 每次比较k个链表的第一个元素，选出最小的，然后把最小的加入总链表并且最小的链表向前一位
     * @Param: 
     * @return: 
     * @Author: xjh
@@ -146,7 +147,7 @@ public class MergeTwoLists {
 
     private ListNode merge(ListNode[] lists, int left, int right) {
         if (left == right) return lists[left];
-        int mid = left + (right - left) / 2;   //求right与left中间位置，（left+right）/2的变形   （right-left）/2求的是长度的一半
+        int mid = left + (right - left) / 2;   //求right与left中间位置，（left+right）/2的变形   （right-left+1）/2求的是长度的一半
         ListNode l1 = merge(lists, left, mid);
         ListNode l2 = merge(lists, mid + 1, right);
         return mergeTwoLists2(l1, l2);

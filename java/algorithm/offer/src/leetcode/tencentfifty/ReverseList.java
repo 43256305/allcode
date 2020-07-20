@@ -56,7 +56,7 @@ public class ReverseList {
         return p;
     }
 
-    public void headInsert(ListNode head){   //两个指针（head，e）
+    public void headInsert(ListNode head){   //两个指针（head，e）  头插法
         for (int i=0;i<10;i++){
             ListNode e=new ListNode(i);
 
@@ -65,7 +65,7 @@ public class ReverseList {
         }
     }
 
-    public void tailInsert(ListNode head){   //两个指针（p，e），p指向尾节点
+    public void tailInsert(ListNode head){   //两个指针（p，e），p指向尾节点  尾插法
         ListNode p=head;
         for (int i=0;i<10;i++){
             ListNode e=new ListNode(i);

@@ -7,6 +7,11 @@ package leetcode.tencentfifty;
  * @create: 2020-06-04 19:52
  **/
 public class Reverse {
+    private static Reverse reverse = new Reverse();
+
+    public static void main(String[] args) {
+        System.out.println(reverse.reverse(-124));
+    }
 
     /**
     * @Description:
@@ -21,7 +26,7 @@ public class Reverse {
     public int reverse(int x) {
         int reverse=0;
         while (x!=0){
-            int pop=x%10;  //%10是取尾巴
+            int pop=x%10;  //%10是取尾巴   负数%10也是负数
 
             //判断去掉个位是否溢出（为什么要判断去掉个位呢？因为最后一步就是给reverse加上个位，加上个位后再判断是否溢出已经没有意义了，所以
             // 要在他加上个位之前判断）

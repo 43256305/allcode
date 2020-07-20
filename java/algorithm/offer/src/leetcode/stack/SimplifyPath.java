@@ -35,7 +35,7 @@ public class SimplifyPath {
                 if (!stack.isEmpty()){
                     stack.pop();
                 }
-            }else if(!"".equals(pathArray[i])){
+            }else if(!"".equals(pathArray[i])){  //路径字符串
                 stack.push(pathArray[i]);
             }
         }
@@ -45,7 +45,6 @@ public class SimplifyPath {
         StringBuilder string=new StringBuilder();
         for (int i=0;i<stack.size();i++){
             string.append("/"+stack.elementAt(i));
-
         }
         return string.toString();
     }

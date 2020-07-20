@@ -3,6 +3,8 @@ package leetcode.string;
 /**
  * @program: offer
  * @description: 字符串相乘
+ * 输入: num1 = "123", num2 = "456"
+ * 输出: "56088"
  * @author: xjh
  * @create: 2020-06-11 08:51
  **/

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-1">
+                <a href="http://localhost:8080/home">
+                    <svg class="bi bi-arrow-left" width="3em" height="3em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" clip-rule="evenodd"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="text-center col-md-12">
+            <h2>用户信息</h2>
+            此用户的个人信息
+        </div>
+    </div>
+    <div class="row">&nbsp</div>
+    <div class="row">
+        <div class="col-md-12 col-md-push-3">
+            <div class="card border-secondary mb-3">
+                <div class="card-header"><h3>用户资料</h3></div>
+                <div class="card-body text-secondary">
+                    <h5 class="card-title">向他人展示的信息</h5>
+                    <table class="table table-hover">
+                        <tr>
+                            <td>用户id</td>
+                            <td th:text="${user.id}">1000</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>姓名</td>
+                            <td th:text="${user.name}">jack</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                            </button></td>
+                        </tr>
+                        <tr>
+                            <td>角色</td>
+                            <td th:if="${user.iden}==1">普通用户</td>
+                            <td th:if="${user.iden}==2">店主</td>
+                            <td th:if="${user.iden}==3">骑手</td>
+                            <td align="right"> <button type="button" class="btn btn-default" aria-label="Left Align">
+                            </button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</html>

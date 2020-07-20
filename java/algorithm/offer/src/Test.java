@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @program: offer
@@ -11,32 +9,41 @@ import java.util.Random;
 public class Test {
     private static Test test = new Test();
     public static void main(String[] args) {
-        List<List<Integer>> res =  permute(3);
-        System.out.println(res);
+//        System.out.println(solution());
+//        System.out.println(Integer.MAX_VALUE+1);
     }
 
-    public static List<List<Integer>> permute(int n){  //1-n的全排列
-        List<Integer> track = new ArrayList<>();
-        List<List<Integer>> res = new ArrayList<>();
-        backTrack(track,n,res);
+    public static int solution(){
+        Scanner in = new Scanner(System.in);
+        int num = Integer.valueOf(in.nextLine());
+        int[] prices = new int[num];
+        String[] temp = in.nextLine().split(" ");
+        for (int i = 0;i < num;i ++){
+            prices[i] = Integer.valueOf(temp[i]);
+        }
+        int money = Integer.valueOf(in.nextLine());
 
-        return res;
-
+        return backTrack(-1,money,prices);
     }
 
-    public static void backTrack(List track,int n,List<List<Integer>> res){
-        if (track.size() == n){
-            res.add(new ArrayList<>(track));
-            return ;
+    public static int backTrack(int i,int money,int[] prices){
+        if (money == 0){
+            return 1;
         }
 
-        for (int i = 1;i <= n;i++){
-            if (track.contains(i)){
-                continue;
+        if (money < 0){
+            return 0;
+        }
+
+
+        i++;
+        for (;i<prices.length;i++){
+            if (backTrack(i,money-prices[i],prices)==1){
+                return 1;
             }
-            track.add(i);
-            backTrack(track,n,res);
-            track.remove((Integer)i);
         }
+
+        return 0;
     }
+
 }

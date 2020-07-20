@@ -6,6 +6,10 @@ import java.util.Stack;
 /**
  * @program: offer
  * @description: 字符串解密
+ *  输入：s = "3[a]2[bc]"
+ *  输出："aaabcbc"
+ *  输入：s = "3[a2[c]]"
+ *  输出："accaccacc"
  * @author: xjh
  * @create: 2020-06-13 08:52
  **/
@@ -18,9 +22,11 @@ public class DecodeString {
 
     /**
     * @Description: 栈 时间：n
-     * 符号区分:[（数字入栈，字符串入栈，初始化数字与字符串）,数字,字符,]（根据栈顶字符与上一个res计算字符串在于栈顶字符串拼接）
+     * 符号区分:[：数字入栈，字符串入栈，初始化数字与字符串,数字,字符,]：根据栈顶字符与上一个res计算字符串在于栈顶字符串拼接
      * 如 2[a3[b]]  2入栈，a入栈，3入栈，b存储在res，遇到]符号，res与数字栈顶循环得到tem（bbb），tem与字符栈顶拼接abbb存入res，
      * 又遇到]符号，res（abbb）与栈顶数字循环，abbbabbb放入res，返回res，结束。
+     * 变量：res：StringBuilder记录[与下一个[之间的字符串  multi：记录[与下一个[之间的与循环次数  遇到下一个[就要进入栈
+     * stack_multi/stack_res：记录上面多个[与[之间的字符串与循环次数
     * @Param: 
     * @return: 
     * @Author: xjh
@@ -52,7 +58,10 @@ public class DecodeString {
 
     
     /**
-    * @Description: 递归  时间：n
+    * @Description: 递归  深度优先遍历  时间：n
+     * 变量：i遍历string的指针，res：存放拼接的字符串  s:整个字符串
+     * 递归退出：遇到]符号，返回此时i指针指向的位置（即退出时]符号的下标）  递归：遇到[符号，递推退出时把退出的字符串与当前的数字multi循环
+     *
     * @Param: 
     * @return: 
     * @Author: xjh
@@ -76,7 +85,7 @@ public class DecodeString {
                 }
             }
             else if(s.charAt(i) == ']')  //遇到]符号结束递归，返回计算结果
-                return new String[] { String.valueOf(i), res.toString() };
+                return new String[] { String.valueOf(i), res.toString() };   //i：此]符号的下标  res：[]中的字符串
             else
                 res.append(String.valueOf(s.charAt(i)));
             i++;

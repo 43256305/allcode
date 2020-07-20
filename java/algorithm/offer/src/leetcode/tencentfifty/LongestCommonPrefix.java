@@ -3,6 +3,8 @@ package leetcode.tencentfifty;
 /**
  * @program: offer
  * @description:最长公共前缀
+ * 输入: ["flower","flow","flight"]
+ * 输出: "fl"
  * @author: xjh
  * @create: 2020-06-05 19:23
  **/

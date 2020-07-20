@@ -17,7 +17,7 @@ public class MyAtoi {
     public static int myAtoi(String str) {
         char[] c=str.toCharArray();
         int num=0;
-        int flag=1;
+        int flag=1;   //代表是正数还是负数
         boolean start=false;
         for (int i=0;i<c.length;i++){
             if (start){

@@ -1,0 +1,15 @@
+<li th:fragment="menuItem (path,active,title,icon,text)" class="active"
+	th:class="${active==menu ? 'active' : ''}" xmlns:th="http://www.w3.org/1999/xhtml">
+	<a th:href="@{__${path}__}" th:title="${title}"> 
+		<span th:class="'fas  fa-'+${icon} +' fa-2x'" aria-hidden="true"></span> 
+		<span id="flag" th:text="${text}">Template</span>
+	</a>
+</li>
+<!--这是替换layout中的导航栏-->
+<script>
+	$(document).ready(function () {
+		if ($("#flag").text().equals("个人信息")){
+			window.location.replace("http://localhost:8080/profile")
+		}
+	})
+</script>

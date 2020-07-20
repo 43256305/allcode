@@ -82,19 +82,19 @@ public class LongestPalindrome {
         boolean[][] dp = new boolean[len][len];
         char[] charArray = s.toCharArray();
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) {  //对角线为什么设为true呢？比如11，22，33这些对角线位置都只有一个字母，当然可以看成是回文子串
             dp[i][i] = true;
         }
-        //循环：abcd，循环1：比较a与b，循环2：比较c与a，c与b，循环3：比较d与a，d与b，d与c（在表格中体现为竖着填表，也可以从下往上填，改变i即可）
+        //循环：abcd，循环1：比较a与b，循环2：比较c与a，c与b，循环3：比较d与a，d与b，d与c（在表格中体现为竖着填表，只填二维数组的右上三角形）
         for (int j = 1; j < len; j++) {
-            for (int i = 0; i < j; i++) {
+            for (int i = 0; i < j; i++) {  //为什么i必须小于j？因为dp[i][j]代表i到j字符串是否为回文子串，所以i一定要小于j
                 if (charArray[i] != charArray[j]) {
                     dp[i][j] = false;
                 } else {
                     if (j - i < 3) {   //两个字母相等，且他们的长度也小于等于3，则肯定是回文，如aa，aba
                         dp[i][j] = true;
                     } else {
-                        //动态规划关系式
+                        //动态规划关系式（即i/j等于他左下对角线上的值）
                         dp[i][j] = dp[i + 1][j - 1];   //比如0与3位置相等，那么怎么证明他是回文呢？看0+1=1与3-1=2是否是回文串。
                     }
                 }

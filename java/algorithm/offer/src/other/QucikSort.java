@@ -53,7 +53,7 @@ public class QucikSort {
     * @Author: xjh
     * @Date: 2020/3/25
     */
-    public static  void quickSort(int[] array,int start,int end){  //因为是递归，所以也要指定start和end，要不然第二轮的时候就不知道开始结束了
+    public static void quickSort(int[] array,int start,int end){  //因为是递归，所以也要指定start和end，要不然第二轮的时候就不知道开始结束了
         if (start<end){  //当start=end时，说明子数组就一个元素，不用在分割了      注意是if，不是while，递归怎么会和循环一起使用呢。
             int s;
             s=partition(array,start,end);   //s位置的已经排好序了

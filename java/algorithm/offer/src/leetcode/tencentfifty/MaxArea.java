@@ -2,7 +2,7 @@ package leetcode.tencentfifty;
 
 /**
  * @program: offer
- * @description:
+ * @description:乘最多水的容器
  * @author: xjh
  * @create: 2020-06-05 17:20
  **/
