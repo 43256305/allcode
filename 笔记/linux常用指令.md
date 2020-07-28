@@ -1,0 +1,3 @@
+1. 读取文件：cat指令，cat -n显示行号。  cat file|more一页一页查看文件，按空格翻页，回车下一行。less file一页一页查看文件，只不过less是一页一页加载文件，而不是一下子加载完成（空格下一页，回车下一行，pgup上一页，ugdn下一页）。
+2. 查找文件：find指令，find  /usr -name test1.txt   以test1.txt的名字在/usr的目录下查找文件，find /usr/test -user root在/usr/test目录下查找用户root创建的文件 ，find /usr -size +10M查找/usr目录下大小大于10M的文件     locate使用之前要先updatedb指令，然后查找文件。
+3. 权限管理：chmod o-x file.sh  给其他用户减去对file.sh的执行权限（u代表文件所有者，g代表文件所在组，o代表其他人，a代表所有人，也可以不用加减号而用等于号如chmod u=rwx,g=rx,o=r管理权限）。groups查看当前用户所属组。
