@@ -40,7 +40,7 @@ public class IsValidBST {
                 stack.push(((TreeNode)e).val);
                 stack.push(((TreeNode)e).left);
             }else{  //val
-                if (one){  //如果为第一次赋值，则直接赋值，不用比较
+                if (one){  //如果为第一次赋值（tree的第一个节点），则直接赋值，不用比较
                     last = (Integer)e;
                     one=false;
                     continue;
@@ -59,8 +59,10 @@ public class IsValidBST {
         
         /**
         * @Description: 递归  时间：n
-         * 原理：每个节点都在lower与upper之间，每次递归右节点时，lower更新为右节点的父节点（即底增大了，因为右子树的所有节点都要大于这个父节点），
+         * 原理：大多数都在lower与upper之间，每次递归右节点时，lower更新为右节点的父节点（即底增大了，因为右子树的所有节点都要大于这个父节点），
          * 每次递归左节点时，upper变为父节点（即顶变小了，因为每个左子树都要小于这个父节点）
+         * 一些节点没有lower与upper，如root节点不用比较，一些节点只有lower或者upper，这些节点与既有lower又有upper的节点一样，都要与自己
+         * 的lower与upper比较
         * @Param: 
         * @return: 
         * @Author: xjh

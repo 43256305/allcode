@@ -5,6 +5,9 @@ import java.util.*;
 /**
  * @program: offer
  * @description: 单词拆分   https://leetcode-cn.com/problems/word-break/solution/dan-ci-chai-fen-by-leetcode/
+ * 输入: s = "leetcode", wordDict = ["leet", "code"]
+ * 输出: true
+ * 解释: 返回 true 因为 "leetcode" 可以被拆分成 "leet code"。
  * @author: xjh
  * @create: 2020-06-02 14:07
  **/

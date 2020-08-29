@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * @program: seckill
  * @description:
@@ -18,12 +20,32 @@ public class ProductService {
     private ProductDao productDao;
 
     @Transactional
-    public Product getProductById(Long productId){
-        return null;
+    public Product getProductById(Long id){
+        return productDao.getProductById(id);
     }
 
     @Transactional
-    public int deductProductStock(Long productId){
-        return 0;
+    public List<Product> listProducts(){return productDao.listProducts();}
+
+    @Transactional
+    public int deductProductStock(Long id){
+        return productDao.deductProductStock(id);
     }
+
+    @Transactional
+    public void saveProduct(Product product){
+        productDao.saveProduct(product);
+    }
+
+    @Transactional
+    public void deleteProduct(Long id){
+        productDao.deleteProduct(id);
+    }
+
+    @Transactional
+    public void updateProduct(Product product){
+        productDao.updateProduct(product);
+    }
+
+
 }

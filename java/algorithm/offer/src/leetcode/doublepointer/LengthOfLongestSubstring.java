@@ -6,6 +6,9 @@ import java.util.Set;
 /**
  * @program: offer
  * @description: 无重复字符的最长子串
+ * 输入: "abcabcbb"
+ * 输出: 3
+ * 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
  * @author: xjh
  * @create: 2020-06-08 19:46
  **/

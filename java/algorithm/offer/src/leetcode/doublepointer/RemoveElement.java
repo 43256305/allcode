@@ -31,6 +31,7 @@ public class RemoveElement {
             right--;
             n--;
         }
+        //right指向其他值，left指向val，把right上的其他值赋值给left位置
         for (;left<n;left++){  //left从0开始，一旦nums[left]==val就要把right赋值给left，right--，n--，right再循环前进直到不是val
             if (nums[left]==val){
                 nums[left]=nums[right];
