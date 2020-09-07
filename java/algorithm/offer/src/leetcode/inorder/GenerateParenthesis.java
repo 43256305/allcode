@@ -8,6 +8,7 @@ import java.util.Queue;
 /**
  * @program: offer
  * @description: 括号生成
+ * 数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且有效的 括号组合。
  * @author: xjh
  * @create: 2020-06-16 16:55
  **/
@@ -64,7 +65,8 @@ public class GenerateParenthesis {
             }
 
             if (left > 0) {  //去除一个左括号的情况
-                dfs(curStr + "(", left - 1, right, res);
+                dfs(curStr + "(", left - 1, right, res);   //可以直接用string去+，而不用StringBuilder类型，因为String类型相加
+                // 就是新建一个String，这样不会影响到下面加右括号的场景
             }
 
             if (right > 0) {  //去除一个右括号的情况  注意上面去除左括号并不影响下面，left还是没变，这只是两种情况

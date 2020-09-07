@@ -8,6 +8,15 @@ import java.util.Set;
 /**
  * @program: offer
  * @description: 串联所有单词的子串
+ * 给定一个字符串s和一些长度相同的单词words。找出 s 中恰好可以由words 中所有单词串联形成的子串的起始位置。
+ * 注意子串要与words 中的单词完全匹配，中间不能有其他字符，但不需要考虑words中单词串联的顺序。
+ * 输入：
+ *   s = "barfoothefoobarman",
+ *   words = ["foo","bar"]
+ * 输出：[0,9]
+ * 解释：
+ * 从索引 0 和 9 开始的子串分别是 "barfoo" 和 "foobar" 。
+ * 输出的顺序不重要, [9,0] 也是有效答案。   0,9是起始位置
  * @author: xjh
  * @create: 2020-07-06 16:52
  **/
@@ -16,7 +25,7 @@ public class FindSubstring {
     class Solution1{
         /**
         * @Description:  hashmap  时间复杂度：n平方
-         * 原理：使用两个hashmap，一个hashmap包含所有word，并且每个word的value都为，第二个map包含了从i开始匹配到的word，匹配
+         * 原理：使用两个hashmap，一个hashmap包含所有word，并且每个word的value都为此word出现的次数，第二个map包含了从i开始匹配到的word，匹配
          * 到一次，则赋值为1，匹配到同一个word多次，则每次赋值都在原来的value上加一  即getOrDefault()方法，最后比较两个map是否
          * 相等   使用getOrDefault()的好处：如果字符串不包含word，或者包含同一个word多次，那么两个map都不会相等
          * 变量：i（0到length-all-len 字符串s从0开始匹配，每次加1），j（0到all_len  每次匹配one_word长度的字符串）
@@ -36,6 +45,7 @@ public class FindSubstring {
                 map.put(word, map.getOrDefault(word, 0) + 1);  //getOrDefault(k,v)如果map中已经put了k，则返回
                 //此key的value，否则返回v  所以这里都给word赋值了1
             }
+            //从0开始，每次前进一位，每次取all_len长度的子串，把子串分割放入另一个map
             for (int i = 0; i < s.length() - all_len + 1; i++) {
                 String tmp = s.substring(i, i + all_len);  //直接从i开始截取all_len长度的子串
                 HashMap<String, Integer> tmp_map = new HashMap<>();

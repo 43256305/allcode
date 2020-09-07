@@ -29,6 +29,21 @@ public class MaxProfit {
         return profit;
     }
 
+    //与最大子序和的区别：1.先加再判断是否小于0(如果先判断再+，那么sum可能为负值，所以要先+再判断)
+    // 2.小于0，sum=0，而不是num（因为最大利润不可能为负）  3.i小于len-1，因为要判断这一个与后一个之差
+    public int maxProfit2(int[] prices) {
+        int max = 0;
+        int sum = 0;
+        for (int i = 0;i < prices.length - 1;i++){
+            sum += prices[i+1] - prices[i];
+            if (sum < 0){
+                sum = 0;
+            }
+            max = Math.max(max, sum);
+        }
+        return max;
+    }
+
     /**
     * @Description: 暴力法
     * @Param: 

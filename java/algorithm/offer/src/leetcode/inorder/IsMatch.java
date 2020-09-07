@@ -3,6 +3,11 @@ package leetcode.inorder;
 /**
  * @program: offer
  * @description: 正则表达式匹配
+ * 输入:
+ * s = "aa"
+ * p = "a*"
+ * 输出: true
+ * 解释:因为 '*' 代表可以匹配零个或多个前面的那一个元素, 在这里前面的元素就是 'a'。因此，字符串 "aa" 可被视为 'a' 重复了一次。
  * @author: xjh
  * @create: 2020-06-16 15:30
  **/

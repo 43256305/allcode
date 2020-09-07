@@ -20,7 +20,7 @@ public class IsPalindrome {
         int n=s.length;
         //下面这个循环可以判断字符串是否为回文数（奇数时：3  3/2=1  所以只判断了0   偶数时：2  2/2=1  所以只判断了0）
         for (int i=0;i<n/2;i++){
-            if (s[i]!=s[n-1-i]){
+            if (s[i]!=s[n-1-i]){   //n-(1+i)求倒数第i+1个的下标，如i=0，则n-1为倒数第一个（与链表中倒数第i个一样原理）
                 return false;
             }
         }

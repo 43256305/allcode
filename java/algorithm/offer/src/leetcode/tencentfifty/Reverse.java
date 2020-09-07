@@ -14,7 +14,7 @@ public class Reverse {
     }
 
     /**
-    * @Description:
+    * @Description:  可以直接用long型，最后判断此long型是否大于最大值，小于最小值
      * reverse>Integer.MAX_VALUE/10判断还没加上个位时reverse是否大于最大值，reverse==Integer.MAX_VALUE/10&&pop>7判断加上个位后是否大于最大值
      * 其实||后面的可以不加，因为只要去掉个位后不大于最大值，加上个位后也不可能大于最大值，因为x本身也是整数，x的位数达到10位时，首位只可能是1或2
      * 而当x的位数没达到10位时，它的反转reverse自然也不可能溢出

@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * @program: datastructure
  * @description: 堆排序  https://blog.csdn.net/zdp072/article/details/44227317
+ * 堆插入数据都是放在数组的最后（从他的父节点开始调整，即第n/2开始调整一次），堆删除只能删除堆顶元素（为了便于重建堆，实际的操作是将最后一个
+ * 数据的值赋给根结点，然后再从根结点开始进行一次从上向下的调整）
  * @author: xjh
  * @create: 2020-04-07 22:19
  **/

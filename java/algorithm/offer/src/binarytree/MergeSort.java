@@ -56,7 +56,7 @@ public class MergeSort {
 
         // 把较小的数先移到新数组中
         while (i <= mid && j <= high) {
-            if (a[i] < a[j]) {
+            if (a[i] <= a[j]) {   //i在j的前面，当i与j元素相等时，我们先给i赋值，这样可以保证归并排序的稳定性。
                 temp[k++] = a[i++];
             } else {
                 temp[k++] = a[j++];

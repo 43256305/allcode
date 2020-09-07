@@ -2,7 +2,7 @@ package leetcode.tencentfifty;
 
 /**
  * @program: offer
- * @description:字符串转化整数
+ * @description:字符串转换整数 (atoi)
  * @author: xjh
  * @create: 2020-06-05 15:49
  **/

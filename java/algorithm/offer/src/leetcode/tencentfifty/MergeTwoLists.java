@@ -127,7 +127,7 @@ public class MergeTwoLists {
         while (!queue.isEmpty()) {
             p.next = queue.poll();
             p = p.next;
-            if (p.next != null) queue.add(p.next);
+            if (p.next != null) queue.add(p.next);  //每一个add的地方都要判断是否为null
         }
         return dummy.next;
     }
@@ -135,6 +135,9 @@ public class MergeTwoLists {
 
     /**
     * @Description: 分治法  把链表用递归两两合并（归并：已知部分的最优解，如何应用在整体上？）
+     * 与归并排序不同的地方就是当start==end时，是直接返回lists[start]，也就是说，当start==end时，就是一个链表，所以直接返回此链表
+     * merge有两个返回的地方，一个是返回合并后的头，一个是直接返回list[start]，前一个返回针对的是当数组中有两个链表时，后一个返回针对的是
+     * 数组中只有一个链表，所以返回此链表即可
     * @Param:
     * @return:
     * @Author: xjh
@@ -146,7 +149,7 @@ public class MergeTwoLists {
     }
 
     private ListNode merge(ListNode[] lists, int left, int right) {
-        if (left == right) return lists[left];
+        if (left == right) return lists[left];    //唯一与归并排序不同的地方   left==right说明left与right就是一条链表，不用合并，直接返回
         int mid = left + (right - left) / 2;   //求right与left中间位置，（left+right）/2的变形   （right-left+1）/2求的是长度的一半
         ListNode l1 = merge(lists, left, mid);
         ListNode l2 = merge(lists, mid + 1, right);

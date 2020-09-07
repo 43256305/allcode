@@ -57,6 +57,8 @@ public class TreeNode {
      * 例子：
      * 前序遍历: GDAFEMHZ  左节点：GAFE
      * 中序遍历: ADEFGHMZ   左节点：ADEF
+     * i=0  循环找到G：i=4    4-0就是左子树节点个数（不包含根节点）
+     * 所以前序的左子树为：0+1，0+(4-0)=4   中序的左子树为：0,4-1=3   (所以preStart+(i-inStart)就是前序左子树的终点)
      * 原理：根据前序找出根节点，根据中序，找出左子树所有节点，右子树所有节点
     * @Param:
     * @return:
@@ -81,6 +83,10 @@ public class TreeNode {
                 treeNode.leftNode = reConstructBinaryTree( pre, preStart+1,preStart+i-inStart, in, inStart,i-1);
                 // 重构右子树，注意边界条件
                 treeNode.rightNode = reConstructBinaryTree(pre, preStart+i-inStart+1, preEnd,in,i+1,inEnd);
+
+                //事实上因为左子树在中序与前序中长度都一样，所以inStart==preStart   preStart+1：去掉头节点  i-1：去掉中序中的头节点
+//                root.left = construct(pre, preStart + 1, i , in, inStart, i - 1 );
+//                root.right = construct(pre, i + 1, preEnd, in, i + 1, inEnd);
             }
         }
         return treeNode;
@@ -105,6 +111,7 @@ public class TreeNode {
         TreeNode treeNode = new TreeNode(last[lastEnd]);
         for(int i=inStart;i<=inEnd;i++){
             if(in[i] == last[lastEnd]){
+                //因为i - instart代表左节点个数不包含根，所以如左节点为ABCD  laStart=0  i-instart=4  所以0+4-1=3即D的下标，所以需要减一
                 treeNode.leftNode = reConstructBinaryTree2(in, inStart,i-1,last,lastStart,lastStart+i-inStart-1);
                 treeNode.rightNode = reConstructBinaryTree2(in,i+1,inEnd,last,lastStart+i-inStart,lastEnd-1);
             }

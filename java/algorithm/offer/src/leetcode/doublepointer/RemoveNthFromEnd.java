@@ -25,7 +25,7 @@ public class RemoveNthFromEnd {
             p=p.next;
             i++;
             if (i == n){ //当i=n时，q才指向head，q与p之间相差n+1个节点（包括两边），所以i从0开始。如果q指向倒数第n个，那么就要相差n个节点，即i从1开始
-                q=head;   //q指向倒数第n个的前一个
+                q=head;   //q指向倒数第n个的前一个  q就是指向从后数的第n+1个，所以从后数的下标为n，所以从0开始到n停止
             }else if (i>n){
                 q=q.next;
             }

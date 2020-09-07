@@ -140,5 +140,90 @@ class Solution2{
             return res;
         }
     }
+}
 
+//自己写的  1.外部类包含伪造的头和尾，大小，容量，map  2.内部类（双向链表）包含next，pre，key，value
+//3.主要操作：移动到头节点，删除尾节点，增加到头节点  4.get与put每一次都先根据key获取node
+class Solution3{
+    public class LRUCache {
+        private HashMap<Integer, Node> map = new HashMap();
+        private int threshold ;
+        private int size;
+        private Node head;   //伪头节点与尾节点，可以简化代码的判断
+        private Node tail;
+
+        class Node{
+            Node pre;
+            Node next;
+            Integer value;
+            Integer key;
+
+            public Node(Integer key, Integer value){
+                this.key=key;
+                this.value=value;
+            }
+        }
+
+        public LRUCache(){
+
+        }
+
+        public LRUCache(int threshold){
+            this.threshold = threshold;
+            this.size = 0;
+            head = new Node(null,null);
+            tail = new Node(null,null);
+            head.next=tail;
+            tail.pre=head;
+        }
+
+        public int get(Integer key){
+            Node node = map.get(key);
+            if (node!=null){
+                moveToHead(node);
+                return node.value;
+            }
+            return -1;
+        }
+
+        public void put(Integer key, Integer value){
+            Node node = map.get(key);
+            if (node!=null){  //存在此节点
+                node.value=value;
+                moveToHead(node);
+            }else{  //不存在
+                Node node1 = new Node(key,value);
+                addToHead(node1);
+                map.put(key,node1);
+                size++;
+                if (size>threshold){
+                    removeTail();
+                    size--;
+                }
+            }
+        }
+
+        public void moveToHead(Node node){
+            node.pre.next=node.next;  //原来位置的pre与next
+            node.next.pre=node.pre;
+            node.next=head.next;  //现在位置的pre与next
+            node.pre=head;
+            head.next=node; //头节点的next
+            node.next.pre=node;  //头节点下一个节点的pre
+        }
+
+        public void addToHead(Node node){
+            node.next=head.next;  //现在位置的pre与next
+            node.pre=head;
+            head.next=node; //头节点的next
+            node.next.pre=node;  //头节点下一个节点的pre
+        }
+
+        public void removeTail(){
+            Node node = tail.pre;  //真实的尾节点
+            node.pre.next=tail;
+            tail.pre=node.pre;
+            map.remove(node.key);  //注意维护map
+        }
+    }
 }
