@@ -84,7 +84,7 @@ public class TreeNode {
                 // 重构右子树，注意边界条件
                 treeNode.rightNode = reConstructBinaryTree(pre, preStart+i-inStart+1, preEnd,in,i+1,inEnd);
 
-                //事实上因为左子树在中序与前序中长度都一样，所以inStart==preStart   preStart+1：去掉头节点  i-1：去掉中序中的头节点
+                //下面是错误的
 //                root.left = construct(pre, preStart + 1, i , in, inStart, i - 1 );
 //                root.right = construct(pre, i + 1, preEnd, in, i + 1, inEnd);
             }
