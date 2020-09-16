@@ -28,4 +28,18 @@
 
 15. Spring注入方式：构造器注入，字段注入，方法参数注入（都是针对@Autowired注解）
 
-16. Springboot配置文件两种：.yml与.property
+16. IOC核心流程（https://zhuanlan.zhihu.com/p/104519509）：
+
+    > 1. 容器构建启动入口：以web.xml的配置方式来说，首先我们在 web.xml 中配置 ContextLoaderListener 监听器，当 Tomcat 启动时，会触发 ContextLoaderListener 的 contextInitialized 方法，从而开始 IoC 的构建流程。另一个常用的参数是 contextConfigLocation，用于指定 Spring 配置文件的路径。
+    > 2. ApplicationContext 刷新前配置：A. 确定要使用的容器，通常使用的是：XmlWebApplicationContext，如果是用 Spring Boot，一般是 AnnotationConfigApplicationContext，但其实都差别不大，最终都会继承 AbstractApplicationContext，核心逻辑也都是在 AbstractApplicationContext 中实现。B. 提供一个给开发者初始化 ApplicationContext 的机会
+    > 3. 初始化 BeanFactory、加载 Bean 定义：A. 创建一个新的 BeanFactory，默认为 DefaultListableBeanFactory。  B. 根据 web.xml 中 contextConfigLocation 配置的路径，读取 Spring 配置文件，并封装成 Resource。  C. 根据 Resource 加载 XML 配置文件，并解析成 Document 对象 。 D. 从根节点开始，遍历解析 Document 中的节点。 D1. 对于默认命名空间的节点：先将 bean 节点内容解析封装成 BeanDefinition，然后将 beanName、BeanDefinition 放到 BeanFactory 的缓存中，用于后续创建 bean 实例时使用。  D2. 对于自定义命名空间的节点：会拿到自定义命名空间对应的解析器，对节点进行解析处理
+    > 4. 触发 BeanFactoryPostProcessor：实例化和调用**所有**（包括人为定义的，只要实现了BeanFactoryPostProcessor接口） BeanFactoryPostProcessor，包括其子类 BeanDefinitionRegistryPostProcessor。 BeanFactoryPostProcessor 接口是 Spring 初始化 BeanFactory 时对外暴露的扩展点，Spring IoC 容器允许 BeanFactoryPostProcessor 在容器实例化任何 bean 之前读取 bean 的定义，并可以修改它（此接口的方法传入了beanfactory，我们可以在beanfactory中获取beandefinition并做一些修改）。  BeanDefinitionRegistryPostProcessor 继承自 BeanFactoryPostProcessor，比 BeanFactoryPostProcessor 具有更高的优先级，主要用来在常规的 BeanFactoryPostProcessor **激活之前注册**一些 bean 定义。特别是，你可以通过 BeanDefinitionRegistryPostProcessor 来注册一些常规的 BeanFactoryPostProcessor，因为此时所有常规的 BeanFactoryPostProcessor 都还没开始被处理。
+    > 5. 注册 BeanPostProcessor：注册所有的 BeanPostProcessor，将所有实现了 BeanPostProcessor 接口的类加载到 BeanFactory 中。BeanPostProcessor 接口是 Spring 初始化 bean 时对外暴露的扩展点，Spring IoC 容器允许 BeanPostProcessor 在容器初始化 bean 的前后，添加自己的逻辑处理。在这边只是注册到 BeanFactory 中，具体调用是在 bean 初始化的时候。   beanpostprocessor中的两个方法，允许我们在bean初始化前后进行逻辑处理
+    > 6. 实例化所有剩余的非懒加载单例 bean：遍历所有被加载到缓存中的 beanName，触发所有剩余的非懒加载单例 bean 的实例化。首先通过 beanName 尝试从缓存中获取，如果存在则跳过实例化过程；否则，进行 bean 的实例化。根据 BeanDefinition，使用构造函数创建 bean 实例。根据 BeanDefinition，进行 bean 实例属性填充。执行 bean 实例的初始化。触发 Aware 方法。触发 BeanPostProcessor 的 postProcessBeforeInitialization 方法。如果 bean 实现了 InitializingBean 接口，则触发 afterPropertiesSet() 方法。如果 bean 设置了 init-method 属性，则触发 init-method 指定的方法。触发 BeanPostProcessor 的 postProcessAfterInitialization 方法。将创建好的 bean 实例放到缓存中，用于之后使用。
+    > 7. 完成上下文的刷新：使用应用事件广播器推送上下文刷新完毕事件（ContextRefreshedEvent ）到相应的监听器。我们可以创建一个自定义的监听器，实现ApplicationListener接口即可。
+
+17. sdf
+
+18. sdf
+
+19. sdf

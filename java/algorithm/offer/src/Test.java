@@ -2,6 +2,9 @@ import leetcode.ListNode;
 
 import java.util.*;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 
 /**
@@ -13,8 +16,25 @@ import java.util.concurrent.ExecutorService;
 public class Test {
     static Test test = new Test();
     public static void main(String[] args) {
-        int[] nums = {3,2,5,7,8,1};
-        test.heapSort(nums);
+//        int[] nums = {3,2,5,7,8,1};
+//        test.heapSort(nums);
+        Consumer consumer = new Consumer(10);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0;i<100;i++){
+                    consumer.produce(i);
+                }
+            }
+        }).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0;i<100;i++){
+                    System.out.println(consumer.consume());
+                }
+            }
+        }).start();
     }
 
     public void heapSort(int[] nums){
@@ -78,4 +98,55 @@ public class Test {
         }
     }
 
+}
+
+class Consumer{
+    private int[] nums;
+    private Lock lock = new ReentrantLock();
+
+    private Condition notFull = lock.newCondition();
+    private Condition notEmpty = lock.newCondition();
+    private int capacity;
+    private int size;
+    private int index;
+    public Consumer(){};
+    public Consumer(int capacity){
+        nums = new int[capacity];
+        this.capacity = capacity;
+        size = 0;
+        index = 0;
+    }
+    public void produce(int num){
+        try{
+            lock.lock();
+            while (size == capacity){
+                notEmpty.await();
+            }
+            nums[index] = num;
+            index++;
+            size++;
+            notFull.signal();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
+    }
+
+    public int consume(){
+        try{
+            lock.lock();
+            while (size == 0){
+                notFull.await();
+            }
+            index--;
+            size--;
+            notEmpty.signal();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
+        return nums[index];
+    }
 }
