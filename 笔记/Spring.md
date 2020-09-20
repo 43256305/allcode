@@ -38,7 +38,7 @@
     > 6. 实例化所有剩余的非懒加载单例 bean：遍历所有被加载到缓存中的 beanName，触发所有剩余的非懒加载单例 bean 的实例化。首先通过 beanName 尝试从缓存中获取，如果存在则跳过实例化过程；否则，进行 bean 的实例化。根据 BeanDefinition，使用构造函数创建 bean 实例。根据 BeanDefinition，进行 bean 实例属性填充。执行 bean 实例的初始化。触发 Aware 方法。触发 BeanPostProcessor 的 postProcessBeforeInitialization 方法。如果 bean 实现了 InitializingBean 接口，则触发 afterPropertiesSet() 方法。如果 bean 设置了 init-method 属性，则触发 init-method 指定的方法。触发 BeanPostProcessor 的 postProcessAfterInitialization 方法。将创建好的 bean 实例放到缓存中，用于之后使用。
     > 7. 完成上下文的刷新：使用应用事件广播器推送上下文刷新完毕事件（ContextRefreshedEvent ）到相应的监听器。我们可以创建一个自定义的监听器，实现ApplicationListener接口即可。
 
-17. sdf
+17. beanfactory与factorybean的区别：BeanFactory是接口，提供了IOC容器最基本的形式，给具体的IOC容器的实现提供了规范，FactoryBean也是接口，为IOC容器中Bean的实现提供了更加灵活的方式，对FactoryBean而言，这个Bean不是简单的Bean，而是一个能生产或者修饰对象生成的工厂Bean.
 
 18. sdf
 

@@ -86,7 +86,7 @@ JWT包含：头部信息，内容，签名
    >
    > 2. UserDetails：该接口提供了getUsername()，getPassword()，getAuthorities()等方法，用于对用户与权限的封装。可以自己实现该接口，供 Spring Security 安全认证使用，Spring Security 默认使用的是内置的 User 类。通过 Authentication.getPrincipal() 的返回类型是 Object，但很多情况下其返回的其实是一个 UserDetails 的实例。
    >
-   > 3. Authentication：Authentication 是一个接口，用来表示用户认证信息，在用户登录认证之前相关信息（用户传过来的用户名密码）会封装为一个 Authentication 具体实现类对象，默认情况下为 UsernamePasswordAuthenticationToken（封装了Object类型的principal与credentials），登录之后（通过AuthenticationManager认证）会生成一个更详细的、包含权限的对象
+   > 3. Authentication：Authentication 是一个接口，用来表示用户认证信息，在用户登录认证之前相关信息（用户传过来的用户名密码）会封装为一个 Authentication 具体实现类对象，默认情况下为 UsernamePasswordAuthenticationToken（封装了Object类型的principal与credentials），登录之后（通过AuthenticationManager认证）会生成一个更详细的、包含权限的对象。其中，getPrincipal()是用户的身份信息，大部分情况下返回的是UserDetails接口的实现类。getAuthorities()，权限信息列表，默认是GrantedAuthority接口的一些实现类，通常是代表权限信息的一系列字符串
    >
    > 4. GrantedAuthority：GrantedAuthority 是一个接口，它定义了一个 getAuthorities() 方法返回当前 Authentication 对象的权限字符串，用户有权限是一个 GrantedAuthority 数组，每一个 GrantedAuthority 对象代表一种用户。通常使用他的实现类SimpleGrantedAuthority 。  此实现类都是以集合的形式作为用户权限存储在UserDetails中。
    >
@@ -129,7 +129,7 @@ JWT包含：头部信息，内容，签名
 
 11. 授权相关类https://wiki.jikexueyuan.com/project/spring-security/core-classes.html：
 
-    > 1. SecurityContext：安全上下文接口，即存储认证授权的相关信息，实际上就是存储"**当前用户**"账号信息和相关权限。这个接口只有两个方法，Authentication对象的getter、setter。（使用token与jwt时，因为用户信息都是存储在token中，需要SecurityContext时，我们可以根据token生成SecurityContext）   SecurityContext默认存储在ThreadLocal中，在每一次 request 结束后都将清除当前线程的 ThreadLocal。
+    > 1. SecurityContext：安全上下文接口，即存储认证授权的相关信息，实际上就是存储"**当前用户**"账号信息和相关权限（存储的是Authentication类）。这个接口只有两个方法，Authentication对象的getter、setter。（使用token与jwt时，因为用户信息都是存储在token中，需要SecurityContext时，我们可以根据token生成SecurityContext）   SecurityContext默认存储在ThreadLocal中，在每一次 request 结束后都将清除当前线程的 ThreadLocal。
     > 2. SecurityContextHolder工具类（是用来保存SecurityContext）：SecurityContextHolder工具类就是**把SecurityContext存储在当前线程**中。SecurityContextHolder可以**用来设置和获取SecurityContext**。它主要是给框架内部使用的，可以利用它获取当前用户的SecurityContext进行请求检查，和访问控制等。在Web环境下，SecurityContextHolder是**利用ThreadLocal来存储SecurityContext**的。   通过调用 SecurityContextHolder.getContext().setAuthentication(...)  将 Authentication 对象赋给当前的 SecurityContext
     > 3. SecurityContextPersistenceFilter：SecurityContextPersistenceFilter是Security的拦截器，而且是拦截链中的第一个拦截器，请求来临时它会从HttpSession中把SecurityContext取出来，然后放入SecurityContextHolder。在所有拦截器都处理完成后，再把SecurityContext存入HttpSession，并清除SecurityContextHolder内的引用。
     > 4. 异常处理类：AuthenticationEntryPoint 用来解决匿名用户访问无权限资源时的异常，AccessDeineHandler 用来解决认证过的用户访问无权限资源时的异常。
@@ -140,11 +140,13 @@ JWT包含：头部信息，内容，签名
 
 12. **postman开启cookie**：https://blog.csdn.net/xiangyubobo/article/details/51686215，如果需要用session，那么用postman测试时就需要开启cookie。
 
-13. sdf
+13. 自定义登录页与登录请求方法与url：
 
-14. sdf
+14. CORS（跨域）：跨域：在浏览器上当前访问的网站向另一个网站发送请求获取数据的过程就是跨域请求。同源策略就是向服务端发起请求的时候，以下三项必须与当前浏览器应用一致：域名、端口、协议，用白话说：就是你的应用发送请求**不能访问别人的资源**，否则浏览器就会限制你。当然也有例外，如：img、srcipt、iframe等资源引用的HTML标签不受同源策略的限制。如果缺少了同源策略，浏览器很容易受到XSS、CSRF等攻击。但是我们实际开发中又经常会跨站访问，比如前后端分离的应用是分开部署的，在浏览器看来是两个域。所以同源策略是用来禁止跨域访问的，CORS正好相反是根据自己的需求与规则，有限的开放部分资源的共享。在spring security中配置跨域可以允许别人访问我们的后端资源：在configure中开启，然后配置一个返回CorsConfigurationSource的@Bean
 
-15. sdf
+15. XSS（跨站脚本攻击）：XSS 攻击，一般是指攻击者通过在网页中注入恶意脚本，当用户浏览网页时，恶意脚本执行，控制用户浏览器行为的一种攻击方式。危害：窃取用户Cookie，获取用户隐私，盗取用户账号。劫持用户（浏览器）会话，从而执行任意操作，例如进行非法转账、强制发表日志、发送电子邮件等。 XSS 攻击的本质就是输入的内容被当做程序执行了，所以我们对于用户输入的内容不能完全的信任，需要考虑如何避免其被当做程序执行。  防御方法：**浏览器自带**X-XSS-Protection，**转义**：在 XSS 攻击中，攻击者主要是通过构造特殊字符来注入脚本，所以对用户的输入进行检测就很有必要，并且需要在客户端与服务端都进行输入检测，然后对用户输入的数据进行转义。  **过滤**：在富文本中因为需要保留 HTML ，所以我们不能使用转义的方法防御 XSS 攻击，这里使用过滤的方式防御 XSS 攻击，也就是通过只使用白名单允许的 HTML 标记及其属性，来防御攻击。**内容安全策略（CSP）**：实质就是白名单制度，开发者明确告诉客户端，哪些外部资源可以加载和执行，大大增强了网页的安全性。
 
 16. sdf
+
+17. sfd
 
