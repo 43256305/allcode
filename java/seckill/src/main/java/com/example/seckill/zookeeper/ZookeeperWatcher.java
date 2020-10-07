@@ -24,6 +24,7 @@ public class ZookeeperWatcher implements Watcher {
     public void process(WatchedEvent watchedEvent) {
         System.out.println("get notification.");
 
+        //当前没有节点  创建节点
         if (watchedEvent.getType() == Event.EventType.None && watchedEvent.getPath() == null) {
             System.out.println("connect successfully.");
 
@@ -37,7 +38,7 @@ public class ZookeeperWatcher implements Watcher {
                 e.printStackTrace();
             }
 
-        } else if (watchedEvent.getType() == Event.EventType.NodeDataChanged) {
+        } else if (watchedEvent.getType() == Event.EventType.NodeDataChanged) {   //有节点 数据改变则改变更改内存缓存
             try {
                 // 获取节点路径
                 String path = watchedEvent.getPath();
