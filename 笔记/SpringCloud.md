@@ -25,6 +25,33 @@ typora-copy-images-to: 图片
 
 7. 配置管理（spring cloud config）：为什么要进行配置管理？当我们的微服务系统开始慢慢地庞大起来，那么多 `Consumer` 、`Provider` 、`Eureka Server` 、`Zuul` 系统都会持有自己的配置，这个时候我们在项目运行的时候可能需要更改某些应用的配置，如果我们不进行配置的统一管理，我们只能**去每个应用下一个一个寻找配置文件然后修改配置文件再重启应用**。而使用spring cloud config**既能对配置文件统一地进行管理（git/svn），又能在项目运行时动态修改配置文件**。我们的应用只有启动的时候才会进行配置文件的加载，那么我们的 `Spring Cloud Config` 就暴露出一个接口给启动应用来获取它所想要的配置文件，应用获取到配置文件然后再进行它的初始化工作。那么在应用运行时我们更改了配置文件，应用怎么动态刷新呢？一般我们会使用 `Bus` 消息总线 + `Spring Cloud Config` 进行配置的动态刷新。  spring cloud bus：用于将服务和服务实例与分布式消息系统链接在一起的事件总线。在集群中传播状态更改很有用（例如配置更改事件），你可以简单理解为 `Spring Cloud Bus` 的作用就是**管理和广播分布式系统中的消息**，也就是消息引擎系统中的广播模式。
 
-8. sdf
+8. Gateway处理流程（https://www.cnblogs.com/crazymakercircle/p/11704077.html）：客户端发送请求，在Gateway Handler Mapping中找到匹配的路由，将其发送到Gateway web handler，Handler 再通过指定的过滤器链来将请求发送到我们实际的服务执行业务逻辑，然后返回。
 
-9. sdf
+   ![image-20210219111429563](图片/image-20210219111429563.png)
+
+9. 路由匹配规则配置（routes）：
+
+   > 1. id：唯一的路由id
+   > 2. uri：目标服务地址，使用注册中心时，uri的协议为lb类型（lb://**）。
+   > 3. predicates：路由条件，匹配成功会转发到uri，失败会返回404，包括：Path（当-Path=/ecs/**，uri=http://localhost:9999/，传入的uri为http://localhost:8080/ecs/kjk/sf时，会转发到http://localhost:9999/），Before（在某个时间之前），After，Between，Cookie（cookie包含的键值对），Header（请求头的属性键值对），Host，Method，Query（传入的参数的键值对），RemoteAddr（ip地址）。
+
+10. 过滤器（filters，配置在routes下）：PrefixPath（所有请求添加前缀），RedirectTo（返回码重定向），RemoveRequestHeader（去掉某个请求头信息），RemoveResponseHeader，RewritePath（改写路径），SetPath（设置请求路径），SetRequestHeader，SetStatus，StripPrefix（去掉路径签名的前n个部分），RequestSize（请求大小），Default-filters（默认过滤器，与routes同级配置），PreserveHostHeader(转发请求时保留原始的host头部)
+
+11. 令牌桶限流：需要配置redis，配置RequestRateLimiter过滤器（配置key-resolver，redis-rate-limiter.replenishRate，redis-rate-limiter.burstCapacity三个参数，分别代表用于限流键的解析器的bean对象的名字，令牌桶每秒填充平均速率，令牌桶总容量）。
+
+12. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
